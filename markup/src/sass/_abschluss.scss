@@ -1,0 +1,94 @@
+.order-invoice-delivery {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 38px;
+  .block {
+    @extend .gray-border;
+    padding: 20px 28px;
+    width: 566px;
+    height: 164px;
+    position: relative;
+    .heading-1 {
+      padding-bottom: 18px;
+      font-size: 1.7rem;
+    }
+    .edit {
+      position: absolute;
+      color: #86837a;
+      font-size: 0.9rem;
+      right: 25px;
+      top: 30px;
+      .fa {
+        font-size: 1.5rem;
+      }
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}
+
+.order-details {
+  display: flex;
+  justify-content: space-between;
+  height: 83px;
+  margin: 62px 0 100px 0;
+  color: $text-default;
+  .row {
+    @extend .gray-border;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    height: 52px;
+    line-height: 52px;
+    &:first-child {
+      margin-top: -21px;
+    }
+  }
+  .comments {
+    @extend .gray-border;
+    width: 199px;
+    height: 100%;
+    padding: 10px;
+    line-height: 1.3rem;
+    color: #bbbbbb;
+    font-weight: 600;
+    font-size: 0.97rem;
+    position: relative;
+    span {
+      position: absolute;
+      bottom: 5px;
+      right: 10px;
+      font-size: 0.7rem;
+    }
+  }
+  .summa {
+    width: 322px;
+    height: 100%;
+  }
+  .total {
+    width: 340px;
+    height: 100%;
+    .row {
+      padding: 0 10px;
+      &:last-child {
+        background-color: $gray-color;
+      }
+    }
+  }
+  .proceed {
+    width: 184px;
+    height: 100%;
+    .btn-green {
+      width: 100%;
+      height: 100%;
+      line-height: 16px;
+      padding-top: 18px;
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
+}

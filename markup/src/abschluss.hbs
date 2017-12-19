@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{> head }}
+  <head>
+
+  <body>
+    <div class="holder">
+      {{> notification }}
+      {{> header }}
+      {{> menu }}
+    </div>
+
+    <main>
+      <section>
+        <div class="wrapper">
+          <div class="order-invoice-delivery">
+            <div class="block invoice">
+              <div class="heading-1">
+                Rechnungsadresse
+              </div>
+              <div class="text">
+                Herr max Mustermann <br/>
+                Mustereingabe 123, 12345 Berlin <br/>
+                Deutschland
+              </div>
+              <div class="edit fw-600">
+                <a href="#">
+                  <i class="fa fa-pencil"></i> ändern
+                </a>
+              </div>
+            </div>
+            <div class="block delivery">
+              <div class="heading-1">
+                Lieferadresse
+              </div>
+              <div class="text">
+                Herr max Mustermann <br/>
+                Mustereingabe 123, 12345 Berlin <br/>
+                Deutschland
+              </div>
+              <div class="edit fw-600">
+                <a href="#">
+                  <i class="fa fa-pencil"></i> ändern
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrapper">
+          {{> cart-products managable=false }}
+        </div>
+      </section>
+
+      <section>
+        <div class="wrapper">
+          <div class="order-details">
+            <div class="block comments">
+              Bemerkungen zu Ihrem
+              Einkauf bei uns...
+              <span>200 Zeichen übrig</span>
+            </div>
+            <div class="block summa">
+              <div class="row clear">
+                <div class="left fw-500">SUMME</div>
+                <div class="right fw-700">17,70 €</div>
+              </div>
+              <div class="row clear text-italic">
+                <div class="left">MWST. (7%)</div>
+                <div class="right">1,24 €</div>
+              </div>
+            </div>
+            <div class="block total">
+              <div class="row clear">
+                <div class="left fw-500">VERSAND (DHL)</div>
+                <div class="right fw-600">3,99 €</div>
+              </div>
+              <div class="row clear fw-800">
+                <div class="left">GESAMT</div>
+                <div class="right">22,93 €</div>
+              </div>
+            </div>
+            <div class="block proceed">
+              <div class="btn-green">
+                <a href="#">
+                  Kauf jetzt <br/>
+                  verbindlich <br/>
+                  abschliessen!
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        {{> advertising-services }}
+      </section>
+    </main>
+
+    {{> footer }}
+    {{> copyright }}
+  </body>
+</html>

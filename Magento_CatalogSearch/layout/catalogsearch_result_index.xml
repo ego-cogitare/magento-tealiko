@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<page layout="custom_home" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="default_head_blocks" />
+    <body>
+      <referenceBlock name="report.bugs" remove="true" />
+      <referenceBlock name="section-1" remove="true" />
+      <referenceBlock name="section-2" remove="true" />
+      <referenceBlock name="section-3" remove="true" />
+
+      <move element="page.main.title" destination="products" />
+
+      <referenceContainer name="holder-wrapper">
+        <block class="Magento\Theme\Block\Html\Header" name="header" as="header" template="Magento_Theme::html/header.phtml" after="topmessages" />
+        <block class="Magento\Theme\Block\Html\Topmenu" name="mainmenu" template="Magento_Theme::html/topmenu.phtml" ttl="3600" after="header" />
+      </referenceContainer>
+
+      <referenceContainer name="main-wrapper">
+        <container htmlTag="section">
+          <container htmlTag="div" htmlClass="wrapper category clear">
+            <container htmlTag="div" htmlClass="sitebar left">
+              <block class="Magento\Theme\Block\Html\Topmenu" template="Magento_Theme::html/category/sitebarmenu.phtml" ttl="3600" />
+            </container>
+            <container htmlTag="div" htmlClass="content right">
+              <block class="Magento\Catalog\Block\Product\ListProduct" name="products" template="Magento_Catalog::product/list.phtml" after="page-title">
+                <block class="Magento\Catalog\Block\Product\ProductList\Toolbar" name="product_list_toolbar" template="Magento_Catalog::product/list/toolbar.phtml">
+                  <block class="Magento\Theme\Block\Html\Pager" name="product_list_toolbar_pager"/>
+                </block>
+                <action method="setToolbarBlockName">
+                  <argument name="name" xsi:type="string">product_list_toolbar</argument>
+                </action>
+              </block>
+              <block class="Magento\Framework\View\Element\Template" name="content" template="Magento_Catalog::html/content.phtml" after="products" />
+            </container>
+          </container>
+        </container>
+        <container htmlTag="section">
+          <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::html/advertising.phtml" />
+        </container>
+      </referenceContainer>
+
+      <referenceContainer name="footer-wrapper">
+        <block class="Magento\Theme\Block\Html\Footer" name="footer" as="footer" template="Magento_Theme::html/footer.phtml" before="-" />
+      </referenceContainer>
+
+      <referenceContainer name="copyright-wrapper">
+        <block class="Magento\Framework\View\Element\Template" name="copyright" template="Magento_Theme::html/copyright.phtml" />
+      </referenceContainer>
+    </body>
+</page>

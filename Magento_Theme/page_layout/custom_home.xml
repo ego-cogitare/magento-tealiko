@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
+    <container name="holder-wrapper" htmlTag="div" htmlClass="holder" />
+    <container name="main-wrapper" htmlTag="main" />
+    <container name="footer-wrapper" htmlTag="footer" />
+    <container name="copyright-wrapper" />
+</layout>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{> head }}
+  <head>
+
+  <body>
+    <div class="holder">
+      {{> notification }}
+      {{> header }}
+      {{> menu }}
+    </div>
+
+    <main>
+      <section>
+        <div class="wrapper">
+          <div class="purchase-confirm">
+            <div class="message">
+              <i class="fa fa-check"></i>Vielen Dank für Ihre Bestellung. Per E-mail erhalten Sie weitere Informationen von uns.
+            </div>
+            <div class="title">
+              <span>Vielen Dank für Ihren Einkauf</span> Herr Mustermann.
+            </div>
+            <div class="text">
+              Sie werden in wenigen Minuten eine Bestätigung per E-Mail bekommen, die Ihre Bestellung noch einmal zusammenfasst, sowie weitere Informationen beinhaltet.
+              Bei einer falschen E-Mail-Adresse kann Ihre Bestellung trotzdem bearbeitet werden.
+            </div>
+            <div class="nav clear">
+              <div class="btn-green left">
+                <a href="#">
+                  Drucken Sie sich hier Ihre Auftragsbestätigung aus.
+                </a>
+              </div>
+              <div class="btn-green right">
+                <a href="#">
+                  Zur Startseite
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        {{> advertising-services }}
+      </section>
+    </main>
+
+    {{> footer }}
+    {{> copyright }}
+  </body>
+</html>

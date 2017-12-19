@@ -1,0 +1,196 @@
+header {
+  background-color: $brand-color;
+  height: 188px;
+
+  .logo-wrapper {
+    width: 270px;
+    height: 100%;
+    background-color: $gray-color;
+    text-align: center;
+
+    a {
+      display: block;
+      margin-top: 36px;
+      img {
+        width: 209px;
+      }
+    }
+  }
+
+  .content-wrapper {
+    width: 900px;
+    height: 100%;
+    background: url('../img/header/header-bg.png') no-repeat 0 0;
+    padding: 18px 0 0 28px;
+
+    .general {
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 0.8rem;
+
+      .list {
+        .list-item {
+          display: inline-block;
+          position: relative;
+          margin-right: 17px;
+          padding-left: 17px;
+
+          &:before {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: -3px;
+            font-size: 1rem;
+            font-family: 'FontAwesome';
+            font-weight: normal;
+          }
+
+          &.gift:before {
+            content: "\f06b";
+          }
+
+          &.ring:before {
+            content: "\f1cd";
+          }
+
+          &.phone:before {
+            content: "\f095";
+          }
+
+          &.user:before {
+            content: "\f007";
+          }
+
+          &.lock:before {
+            content: "\f023";
+          }
+
+          &:after {
+            content: '|';
+            display: block;
+            position: absolute;
+            right: -12px;
+            font-weight: normal;
+            top: -4px;
+            font-size: 1rem;
+          }
+
+          &:last-child {
+            margin-right: 0;
+            &:after {
+              display: none;
+            }
+          }
+          a {
+            color: inherit;
+            text-decoration: none;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      .ico-facebook {
+        font-size: 24px;
+        margin-top: -8px;
+        margin-left: 30px;
+        opacity: 0;
+        a {
+          color: inherit;
+        }
+      }
+    }
+
+    .search {
+      .input {
+        @extend .input;
+        width: 540px;
+      }
+      .btn {
+        @extend .btn;
+        width: 62px;
+        background-color: rgba(139, 161, 6, 0.7);
+        font-family: 'FontAwesome';
+        &:hover {
+          color: #ff0;
+        }
+      }
+    }
+
+    .social-login {
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding-top: 30px;
+      height: 45px;
+      opacity: 1;
+      .fa-facebook-official {
+        font-size: 1.6rem;
+        vertical-align: middle;
+      }
+    }
+
+    .search-cart {
+      padding-top: 42px;
+      .cart {
+        color: #ffffff;
+        position: relative;
+        padding-left: 30px;
+        font-size: 1.3rem;
+        font-weight: 500;
+        padding-top: 12px;
+        .fa-shopping-cart {
+          color: #ffffff;
+          text-decoration: none;
+          font-size: 2.0rem;
+          line-height: 1.5rem;
+          margin-right: 8px;
+        }
+        .products {
+          position: relative;
+          width: 30px;
+          height: 30px;
+          background-color: #ffffff;
+          color: $dark-green-color;
+          border-radius: 50%;
+          text-align: center;
+          padding-top: 5px;
+          margin-top: -5px;
+          margin-right: 8px;
+        }
+        .price {
+          padding-right: 16px;
+        }
+      }
+    }
+  }
+}
+
+.small {
+  header {
+    height: 112px;
+    .logo-wrapper {
+      a {
+        margin-top: 12px;
+        img {
+          width: 157px;
+        }
+      }
+    }
+    .content-wrapper {
+      .social-login {
+        opacity: 0;
+        padding-top: 0;
+        height: 0;
+      }
+      .general .ico-facebook {
+        opacity: 1;
+        transition-delay: 0.2s;
+      }
+    }
+    .search-cart {
+      padding-top: 12px;
+    }
+  }
+}

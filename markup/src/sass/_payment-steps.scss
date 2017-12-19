@@ -1,0 +1,36 @@
+.payment-steps {
+  margin-top: 38px;
+  .step {
+    @extend .gray-border;
+    border-right: none;
+    background-color: #efefde;
+    float: left;
+    width: 156px;
+    height: 37px;
+    line-height: 37px;
+    color: #9a9a69;
+    font-weight: 500;
+    position: relative;
+    padding-left: 40px;
+    &:after {
+      z-index: 1;
+      content: '';
+      background: url('../img/payment-steps/shavron-default.png') no-repeat center center;
+      background-size: contain;
+      display: block;
+      position: absolute;
+      top: 0;
+      right: -15px;
+      width: 17px;
+      height: 100%;
+    }
+    &.active {
+      background-color: #9a9a69;
+      font-weight: 800;
+      color: #ffffff;
+      &:after {
+        background-image: url('../img/payment-steps/shavron-active.png');
+      }
+    }
+  }
+}

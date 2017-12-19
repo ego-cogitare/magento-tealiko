@@ -1,0 +1,21 @@
+.copyright {
+  height: 50px;
+  background-color: #9a9a69;
+
+  .text {
+    color: #ffffff;
+    line-height: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .card {
+    display: inline-block;
+    padding-top: 15px;
+    padding-right: 5px;
+
+    img {
+      vertical-align: middle;
+    }
+  }
+}

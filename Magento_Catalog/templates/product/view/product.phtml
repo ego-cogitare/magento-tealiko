@@ -1,0 +1,209 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * Product media data template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Gallery
+ */
+?>
+
+<?php
+  $_product = $block->getProduct();
+  $_images = $_product->getMediaGalleryImages();
+
+  $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+  $product = $objectManager->create('Magento\Catalog\Model\Product')->load($_product->getId());
+  $rating = $objectManager->create('Magento\Review\Model\Rating');
+?>
+
+<div class="clear product-info">
+  <div class="left slider-container">
+    <div class="heading-1"><?php echo $_product->getName() ?></div>
+    <div class="clear">
+      <?php $ratingData = $rating->getEntitySummary($_product->getId())->getData(); ?>
+      <?php if (!empty($ratingData['sum']) && !empty($ratingData['scountum'])) : ?>
+        <div class="text left fw-600">Kunden-Wertung</div>
+        <div class="rating left">☆☆☆☆☆<span class="progress" style="width: <?php printf('%2d', $ratingData['sum'] / $ratingData['count']) ?>%"></span></div>
+      <?php endif;?>
+    </div>
+    <div id="product-slider" class="swiper-container">
+      <div class="swiper-wrapper">
+        <?php if (!empty($_images)) : ?>
+          <?php foreach($_images as $child) : ?>
+            <div class="swiper-slide">
+              <img src="<?php echo $child->getUrl() ?>" alt="<?php echo $_product->getName() ?>" />
+            </div>
+          <?php endforeach; ?>
+        <?php else: ?>
+        <?php endif; ?>
+      </div>
+      <div class="navigate button-prev fa fa-angle-left"></div>
+      <div class="navigate button-next fa fa-angle-right"></div>
+    </div>
+    <div id="product-thumbs" class="swiper-container">
+      <div class="swiper-wrapper">
+        <?php if (!empty($_images)) : ?>
+          <?php foreach($_images as $child) : ?>
+            <div class="swiper-slide">
+              <img src="<?php echo $child->getUrl() ?>" alt="<?php echo $_product->getName() ?>" />
+            </div>
+          <?php endforeach; ?>
+        <?php else: ?>
+        <?php endif; ?>
+      </div>
+    </div>
+    <div class="navigate button-prev fa fa-angle-left"></div>
+    <div class="navigate button-next fa fa-angle-right"></div>
+  </div>
+  <div class="right text product-options">
+    <p class="fw-700">
+      Kurzbeschreibung
+    </p>
+    <?php echo $_product->getDescription() ?>
+    <div class="divider"></div>
+    <form action="" method="post">
+      <div class="count fw-500">
+        <label>Anzahl</label>
+        <input type="number" class="input-number" value="2" min="1" max="99">
+      </div>
+      <div class="options">
+        <div class="option clear">
+          <div class="switch left">
+            <input type="radio" id="option-1" name="product-weight" checked />
+            <label for="option-1"></label>
+          </div>
+          <div class="weight left">
+            <p class="fw-700">100g - (100g / 3,90 €) T-Preis</p>
+            <p>100g - (100g / 2,53 €) <u>C-Preis</u> <img src="<?php echo $this->getViewFileUrl('img/icons/icon-percent-black.png') ?>" valign="middle" alt="Icon percent" /></p>
+          </div>
+          <div class="price right">
+            <p class="fw-700">3,90 €</p>
+            <p>2,53 €</p>
+          </div>
+        </div>
+        <div class="option clear">
+          <div class="switch left">
+            <input type="radio" id="option-2" name="product-weight" />
+            <label for="option-2"></label>
+          </div>
+          <div class="weight left">
+            <p class="fw-700">100g - (100g / 3,90 €) T-Preis</p>
+            <p>100g - (100g / 2,53 €) <u>C-Preis</u> <img src="<?php echo $this->getViewFileUrl('img/icons/icon-percent-black.png') ?>" valign="middle" alt="Icon percent" /></p>
+          </div>
+          <div class="price right">
+            <p class="fw-700">3,90 €</p>
+            <p>2,53 €</p>
+          </div>
+        </div>
+        <div class="option clear">
+          <div class="switch left">
+            <input type="radio" id="option-3" name="product-weight" />
+            <label for="option-3"></label>
+          </div>
+          <div class="weight left">
+            <p class="fw-700">100g - (100g / 3,90 €) T-Preis</p>
+            <p>100g - (100g / 2,53 €) <u>C-Preis</u> <img src="<?php echo $this->getViewFileUrl('img/icons/icon-percent-black.png') ?>" valign="middle" alt="Icon percent" /></p>
+          </div>
+          <div class="price right">
+            <p class="fw-700">3,90 €</p>
+            <p>2,53 €</p>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="clear total-info">
+        <div class="left">
+          <p class="gray">Artikelnr.: <?php echo $_product->getSku() ?></p>
+          <p class="gray price"><span class="fw-800"><?php printf('%0.2f', $_product->getFinalPrice()) ?> €</span>  4.50 €</p>
+        </div>
+        <div class="right text-right">
+          <p class="gray"><img src="<?php echo $this->getViewFileUrl('img/icons/icon-clock.png') ?>" valign="middle" alt="Icon clock" /> Lieferzeit: 3-5 Tage</p>
+          <p>inkl. MwSt. zzgl. <u>Versand</u></p>
+        </div>
+      </div>
+      <button type="submit" class="btn-green w100p">DEm Warenkorb hinzufügen</button>
+    </form>
+  </div>
+</div>
+
+<div class="tabs-wrapper">
+  <ul class="tabs">
+    <li class="tab active">
+      <a href="#tab-1">Beschreibung</a>
+    </li>
+    <li class="tab">
+      <a href="#tab-2">Zubereitung</a>
+    </li>
+    <li class="tab">
+      <a href="#tab-3">Bewertungen (5)</a>
+    </li>
+  </ul>
+  <div id="tab-1" class="tabs-content text">
+    <?php echo $_product->getDescription() ?>
+  </div>
+  <div id="tab-2" class="tabs-content">
+    <p class="text">
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    </p>
+  </div>
+  <div id="tab-3" class="tabs-content">
+    <p class="text">
+      At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    </p>
+    <p class="text">
+      <br/>
+      At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    </p>
+    <p class="text">
+      <br/>
+      At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    </p>
+  </div>
+  <div class="socials clear">
+    <span class="left">Teilen:</span>
+    <div class="icons left">
+      <a href="#" class="icon fa fa-facebook"></a>
+      <a href="#" class="icon fa fa-pinterest"></a>
+      <a href="#" class="icon fa fa-twitter"></a>
+      <a href="#" class="icon fa fa-google-plus"></a>
+      <a href="#" class="icon fa fa-instagram"></a>
+    </div>
+  </div>
+</div>
+
+<?php $relatedProductIds = $product->getRelatedProductIds(); ?>
+<?php if (!empty($relatedProductIds)) : ?>
+  <div id="home-slider-2" data-slides-per-view="3" class="swiper-container featured-products">
+    <div class="title text-center">
+      Produkte die Ihnen auch gefallen könnten:
+    </div>
+    <div class="products swiper-wrapper">
+      <?php foreach ($relatedProductIds as $id) : ?>
+        <?php $relatedProduct = $objectManager->create('Magento\Catalog\Model\Product')->load($id); ?>
+        <div class="product swiper-slide">
+          <span class="label bg-brown">-5<i class="fa fa-euro"></i></span>
+          <a href="<?php echo $relatedProduct->getProductUrl() ?>">
+            <?php echo $block->getImage($relatedProduct, 'category_page_list')->toHtml() ?>
+          </a>
+          <div class="category"><?php //echo $relatedProduct->getCategory() ?>ddd</div>
+          <div class="title"><?php echo $relatedProduct->getName() ?></div>
+          <?php $ratingData = $rating->getEntitySummary($_product->getId())->getData(); ?>
+          <?php if (!empty($ratingData['sum']) && !empty($ratingData['scountum'])) : ?>
+            <div class="rating">☆☆☆☆☆<span class="progress" style="width: <?php printf('%2d', $ratingData['sum'] / $ratingData['count']); ?>%"></span></div>
+          <?php endif; ?>
+          <div class="price-wrapper">
+            <span class="new"><?php printf('%.2f', $relatedProduct->getFinalPrice()); ?> <i class="fa fa-euro"></i></span> inkl. MwSt.<span class="old">20.00 <i class="fa fa-euro"></i></span>
+          </div>
+        </div>
+      <?php endforeach; ?>
+    </div>
+    <div class="navigate button-prev fa fa-angle-left"></div>
+    <div class="navigate button-next fa fa-angle-right"></div>
+  </div>
+<?php endif; ?>

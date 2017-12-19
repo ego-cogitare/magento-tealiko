@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{> head }}
+  <head>
+
+  <body>
+    <div class="holder">
+      {{> notification }}
+      {{> header }}
+      {{> menu }}
+    </div>
+
+    <main>
+      <section>
+        <div class="wrapper">
+          <div class="authorization columns-3">
+            <div class="signin-form block">
+              <div class="heading-1">
+                Anmeldung
+              </div>
+              <div class="text">
+                Melden Sie sich in lhrem Kundenkonto an.
+              </div>
+              <form action="" method="post">
+                <div class="row">
+                  <input type="text" name="username" class="input" placeholder="Username oder E-Mail Adresse *" value="" required />
+                </div>
+                <div class="row">
+                  <input type="password" name="password" class="input" placeholder="Ihr Passwort *" value="" required />
+                </div>
+                <div class="text">
+                  <span>*</span> Pflichtfelder
+                </div>
+                <div class="row remember-me clear">
+                  <div class="left">
+                    <input type="checkbox" id="remember-me" name="password" />
+                    <label for="remember-me">angemeldet bleiben</label>
+                  </div>
+                  <div class="right">
+                    <a href="#">Passwort vergessen?</a>
+                  </div>
+                </div>
+                <div class="row">
+                  <button type="submit" class="btn-green">anmelden (login)</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="signup-form block">
+              <div class="heading-1 text-center">
+                Registrierung
+              </div>
+              <div class="text text-center">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+                dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies
+                nec, pellentesque eu.
+              </div>
+              <div class="btn-brown">
+                <a href="#">jetzt registrieten!</a>
+              </div>
+              <div class="picture text-center">
+                <img src="img/anmeldung/tea-time.png" alt="It's always tea time" />
+              </div>
+            </div>
+
+            <div class="signup-form block no-bg">
+              <div class="heading-1 text-center">
+                Gastbestellung
+              </div>
+              <div class="text text-center">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+                dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies
+                nec, pellentesque eu.
+              </div>
+              <div class="btn-brown">
+                <a href="#">nächster schritt</a>
+              </div>
+              <div class="picture text-center">
+                <img src="img/anmeldung/sigin-guest.png" class="guest" alt="Guest login" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        {{> advertising-services }}
+      </section>
+    </main>
+
+    {{> footer }}
+    {{> copyright }}
+  </body>
+</html>

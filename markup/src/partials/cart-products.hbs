@@ -1,0 +1,60 @@
+<div class="cart-products">
+  <div class="heading">
+    <div>ARTIKEL</div>
+    <div>MENGE</div>
+    <div>PREIS</div>
+    <div>GESAMT</div>
+  </div>
+  <div class="product clear">
+    <div class="preview clear">
+      <div class="picture left">
+        <img src="img/payment-steps/cart-product-01.jpg" alt="" />
+      </div>
+      <div class="description left">
+        <h2>Aprikosen Creme ST 100g</h2>
+        <span>Schwarztee -aromatisiert-</span>
+      </div>
+    </div>
+    <div class="count fw-500">
+      {{#if managable}}
+        <input type="number" class="input-number" value="2" min="0" max="99" />
+      {{else}}
+        2
+      {{/if}}
+    </div>
+    <div class="price">
+      4.90€
+    </div>
+    <div class="total">
+      9.80€*
+    </div>
+    <div class="right fa fa-close">
+    </div>
+  </div>
+  <div class="product clear">
+    <div class="preview clear">
+      <div class="picture left">
+        <img src="img/payment-steps/cart-product-02.jpg" alt="" />
+      </div>
+      <div class="description left">
+        <h2>Ceylon Sumatraville FOP -entkoffeiniert- ST  100g</h2>
+        <span>Schwarztee -entkoffeiniert-</span>
+      </div>
+    </div>
+    <div class="count fw-500">
+      {{#if managable}}
+        <input type="number" class="input-number" value="1" min="0" max="99" />
+      {{else}}
+        1
+      {{/if}}
+    </div>
+    <div class="price">
+      7.90€
+    </div>
+    <div class="total">
+      7.90€*
+    </div>
+    <div class="right fa fa-close">
+    </div>
+  </div>
+</div>

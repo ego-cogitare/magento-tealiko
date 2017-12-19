@@ -1,0 +1,111 @@
+<?php $columnsLimit = $block->getColumnsLimit() ?: 0; ?>
+<?php $_menu = $block->getHtml('level-top', 'submenu', $columnsLimit) ?>
+<div class="title">Kategorien: <span><?php echo strip_tags($block->getBlockHtml('page.main.title')); ?></span></div>
+
+<ul class="menu">
+  <?php /* @escapeNotVerified */ echo $_menu; ?>
+</ul>
+<!-- <ul class="menu">
+  <li class="menu-item icon-play">
+    <a href="#">Schwarztee</a>
+    <ul class="submenu">
+      <li class="submenu-item">
+        <a href="#">- Schwarz -aromatisiert-</a>
+      </li>
+      <li class="submenu-item">
+        <a href="#">- Schwarz -entkoffeiniert-</a>
+      </li>
+      <li class="submenu-item">
+        <a href="#">- Darjeeling</a>
+      </li>
+      <li class="submenu-item">
+        <a href="#">- Assam</a>
+      </li>
+      <li class="submenu-item">
+        <a href="#">- Ceylon</a>
+      </li>
+      <li class="submenu-item">
+        <a href="#">- China</a>
+      </li>
+      <li class="submenu-item">
+        <a href="#">- Andere Länder & Gebiete</a>
+      </li>
+      <li class="submenu-item">
+        <a href="#">- Ostfriesen & Blatt-Mischung</a>
+      </li>
+    </ul>
+  </li>
+  </li>
+</ul> -->
+<div class="filter-price">
+  <div class="title">Filter: <span>Preisspanne</span></div>
+  <form method="post" action="">
+    <input type="hidden" id="price-slider" class="slider-input" value="49" />
+    <div class="price-range clear">
+      <div class="left">Preis: <span id="price-slider-from">0</span> - <span id="price-slider-to">49</span> <span>€</span></div>
+      <button class="btn-green right">filtern</button>
+    </div>
+</form>
+</div>
+<div class="filter-sort">
+  <div class="title">Filter: <span>Sortiren nach</span></div>
+  <ul class="filter-items">
+    <li class="filter-item icon-play">
+      <a href="#" class="fw-800">beliebt</a>
+    </li>
+    <li class="filter-item icon-play">
+      <a href="#">niedrigsten Preis zuerst</a>
+    </li>
+    <li class="filter-item icon-play">
+      <a href="#">höchsten Preis zuerst</a>
+    </li>
+    <li class="filter-item icon-play">
+      <a href="#">A-Z</a>
+    </li>
+    <li class="filter-item icon-play">
+      <a href="#">Z-A</a>
+    </li>
+  </ul>
+</div>
+<div class="tags text">
+  <div class="tag">
+    <a href="#">Tag Name Xyz</a>
+  </div>
+  <div class="tag">
+    <a href="#">Tag Name Xyz</a>
+  </div>
+  <div class="tag">
+    <a href="#">Tag Cloud- Name</a>
+  </div>
+  <div class="tag">
+    <a href="#">Tag Name</a>
+  </div>
+  <div class="tag">
+    <a href="#">Tag Name Xyz 12</a>
+  </div>
+  <div class="tag">
+    <a href="#">Tag Name XX</a>
+  </div>
+  <div class="tag">
+    <a href="#">Tag Name Xyz</a>
+  </div>
+  <div class="tag">
+    <a href="#">Tag Name Xyz</a>
+  </div>
+  <div class="tag">
+    <a href="#">Tag Cloud- Name</a>
+  </div>
+  <div class="tag">
+    <a href="#">Tag Name 12</a>
+  </div>
+</div>
+<div class="socials clear">
+  <span class="left">Teilen:</span>
+  <div class="icons left">
+    <a href="#" class="icon fa fa-facebook"></a>
+    <a href="#" class="icon fa fa-pinterest"></a>
+    <a href="#" class="icon fa fa-twitter"></a>
+    <a href="#" class="icon fa fa-google-plus"></a>
+    <a href="#" class="icon fa fa-instagram"></a>
+  </div>
+</div>

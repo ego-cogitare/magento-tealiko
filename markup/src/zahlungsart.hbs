@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{> head }}
+  <head>
+
+  <body>
+    <div class="holder">
+      {{> notification }}
+      {{> header }}
+      {{> menu }}
+    </div>
+
+    <main>
+      <section>
+        <div class="wrapper">
+          {{> payment-steps step-3=true }}
+        </div>
+      </section>
+
+      <section>
+        <div class="wrapper">
+          <div class="order-management step-3">
+            <form action="versand.html" method="get">
+
+              <div class="row">
+                <div class="form-controll">
+                  <input type="radio" name="delivery" class="input-radio" name="" value="" />
+                </div>
+                <div class="description">
+                  <div class="heading-2">
+                    Vorkasse
+                  </div>
+                  <div class="text">
+                    Überweisen Sie den Rechnungsbetrag auf unser Konto. Die Kontodaten gehen Ihnen bei Bestellannahme per Email zu.
+                    Dieser Text wird im Admin unter Versand -> Zahlungsarten zu der jeweiligen Zahlungsart konfiguriert und ist nur für die
+                    Anzeige der Zahlungsartbeschreibung für den Kunden.
+                  </div>
+                </div>
+                <div class="picture">
+                  <img src="img/payment-steps/euro-icon.png" alt="" />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-controll">
+                  <input type="radio" name="delivery" class="input-radio" name="" value="" />
+                </div>
+                <div class="description">
+                  <div class="heading-2">
+                    Nachnahme
+                  </div>
+                  <div class="text">
+                    Bei Zahlung per Nachnahme wird eine zusätzliche Gebühr in Höhe von 3,50 € fällig, die der Zusteller vor Ort erhebt.
+                  </div>
+                </div>
+                <div class="picture">
+                  <img src="img/payment-steps/track-icon.png" alt="" />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-controll">
+                  <input type="radio" name="delivery" class="input-radio" name="" value="" />
+                </div>
+                <div class="description">
+                  <div class="heading-2">
+                    Lastschrift
+                  </div>
+                  <div class="text">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores.
+                  </div>
+                </div>
+                <div class="picture">
+                  <img src="img/payment-steps/shield-icon.png" alt="" />
+                </div>
+              </div>
+              <div class="clear btn-payment">
+                <button type="submit" class="right btn-green">weiter zum versand</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        {{> advertising-services }}
+      </section>
+    </main>
+
+    {{> footer }}
+    {{> copyright }}
+  </body>
+</html>

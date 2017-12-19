@@ -1,0 +1,154 @@
+.category {
+  padding-top: 38px;
+  .content {
+    @extend .gray-border;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    padding-left: 48px;
+    margin-bottom: 80px;
+    .heading-1 {
+      padding-top: 22px;
+      padding-bottom: 16px;
+    }
+    .controlls {
+      @extend .gray-border;
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      font-size: 0.95rem;
+      .pagination {
+        .page {
+          background: #ffffff;
+          padding: 0 3px;
+          display: inline-block;
+          text-align: center;
+          &.active {
+            background: none;
+            font-weight: 600;
+          }
+          a {
+            color: inherit;
+            text-decoration: none;
+          }
+        }
+      }
+      .ordering {
+        .select {
+          border: none;
+          padding: 0;
+          margin-right: 35px;
+        }
+      }
+    }
+    .products {
+      height: auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .product {
+        width: 266px;
+        margin-bottom: 60px;
+        .category-slider {
+          height: 190px;
+          & > ul {
+            list-style-type: none;
+          }
+          .navigate {
+            background-color: #ffffff;
+            color: #cccccc;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            width: 30px;
+            left: 1px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 1.3rem;
+            cursor: pointer;
+            box-shadow: #999999 0px 1px 4px 0px;
+            &.button-next {
+              left: auto;
+              right: 1px;
+            }
+          }
+        }
+        .label {
+          top: 6px;
+          left: 6px;
+        }
+        .price-wrapper {
+          .row-title {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-right: 3px;
+            &.underline {
+              text-decoration: underline;
+            }
+          }
+        }
+        img {
+          padding: 6px;
+          background-color: #ffffff;
+        }
+      }
+    }
+    & > .pagination {
+      text-align: center;
+      .page {
+        display: inline-block;
+        background-color: $gray-color;
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        color: #999999;
+        font-weight: 700;
+        margin-right: 6px;
+        &.active {
+          background-color: $brand-color;
+          color: #ffffff;
+        }
+        &.prev,
+        &.next {
+          @extend .gray-border;
+          line-height: 34px;
+          background: none;
+        }
+        &.prev {
+          margin-right: 20px;
+        }
+        &.next {
+          margin-left: 20px;
+        }
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
+    }
+    .club-banner {
+      height: 240px;
+      margin-top: 60px;
+      .title {
+        font-size: 2.9rem;
+        margin-top: 25px;
+      }
+      .text {
+        font-size: 1.9rem;
+      }
+      .btn-green {
+        height: 34px;
+        font-size: 1.0rem;
+        width: auto;
+        font-weight: 800;
+        margin-top: 26px;
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

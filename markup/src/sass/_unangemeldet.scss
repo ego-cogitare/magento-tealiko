@@ -1,0 +1,29 @@
+.authorization.columns-3 {
+  .block {
+    width: 370px;
+    padding: 20px 30px;
+    &.signin-form {
+      background: url('../img/anmeldung/block-bg.png') repeat-x top left;
+      form {
+        .remember-me {
+          padding-top: 25px;
+        }
+      }
+    }
+    &.signup-form {
+      .text {
+        max-height: 140px;
+        overflow: hidden;
+      }
+      .picture {
+        img {
+          height: 96px;
+          &.guest {
+            height: 80px;
+            margin-top: 6px;
+          }
+        }
+      }
+    }
+  }
+}

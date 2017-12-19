@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{> head }}
+  <head>
+
+  <body>
+    <div class="holder">
+      {{> notification }}
+      {{> header }}
+      {{> menu }}
+    </div>
+
+    <main>
+      <section>
+        <div class="wrapper">
+          {{> payment-steps step-4=true }}
+        </div>
+      </section>
+
+      <section>
+        <div class="wrapper">
+          <div class="order-management">
+            <form action="" method="post">
+
+              <div class="row">
+                <div class="form-controll">
+                  <input type="radio" name="payment" class="input-radio" name="" value="" />
+                </div>
+                <div class="description">
+                  <div class="heading-2">
+                    DHL National <span>(3,50 €)</span>
+                  </div>
+                  <div class="text">
+                    Überweisen Sie den Rechnungsbetrag auf unser Konto. Die Kontodaten gehen Ihnen bei Bestellannahme per Email zu.
+                    Dieser Text wird im Admin unter Versand -> Zahlungsarten zu der jeweiligen Zahlungsart konfiguriert und ist nur für die
+                    Anzeige der Zahlungsartbeschreibung für den Kunden.
+                  </div>
+                </div>
+                <div class="picture">
+                  <img src="img/delivery/dhl.png" alt="" />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-controll">
+                  <input type="radio" name="payment" class="input-radio" name="" value="" />
+                </div>
+                <div class="description">
+                  <div class="heading-2">
+                    DHL Express <span>(5,50 €)</span>
+                  </div>
+                  <div class="text">
+                    Bei Zahlung per Nachnahme wird eine zusätzliche Gebühr in Höhe von 3,50 € fällig, die der Zusteller vor Ort erhebt.
+                  </div>
+                </div>
+                <div class="picture">
+                  <img src="img/delivery/dhl.png" alt="" />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-controll">
+                  <input type="radio" name="payment" class="input-radio" name="" value="" />
+                </div>
+                <div class="description">
+                  <div class="heading-2">
+                    DHL Express <span>(3,20 €)</span>
+                  </div>
+                  <div class="text">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores.
+                  </div>
+                </div>
+                <div class="picture">
+                  <img src="img/delivery/dpd.png" alt="" />
+                </div>
+              </div>
+              <div class="clear btn-payment">
+                <button type="submit" class="right btn-green">kauf im nächsten Schritt abschlieSSen</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        {{> advertising-services }}
+      </section>
+    </main>
+
+    {{> footer }}
+    {{> copyright }}
+  </body>
+</html>

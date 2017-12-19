@@ -1,0 +1,205 @@
+.sitebar {
+  &.homepage {
+    background: #ffffff url('../img/sitebar-menu-home-bg.png') no-repeat center bottom;
+    min-height: 534px;
+  }
+  padding: 30px 20px;
+  color: $gray-color;
+  & > .menu {
+    width: 100%;
+    list-style-type: none;
+    a {
+      text-decoration: none;
+      color: #7f7f7f;
+      span {
+        font-weight: 600;
+        color: inherit;
+      }
+      &:hover {
+        color: $dark-green-color;
+      }
+    }
+    & > li {
+      margin-top: 28px;
+      position: relative;
+      &:first-child {
+        margin-top: 0px;
+      }
+      &:after {
+        position: absolute;
+        display: block;
+        font-family: 'FontAwesome';
+        top: 0;
+        right: 0;
+        color: #7f7f7f;
+        text-align: center;
+        transition: all 0.3s 0s;
+      }
+      &.parent:after {
+        content: '\f107';
+      }
+      &.opened:after {
+        transform: rotate(180deg);
+      }
+      &[class*=' icon-']:after {
+        content: '';
+        background-repeat: no-repeat;
+        background-position: center center;
+        transform: none;
+        width: 27px;
+        height: 27px;
+        right: -9px;
+        font-size: 1.3rem;
+      }
+      &.icon-menu:after {
+        content: '\f0c9';
+        color: #9a9a69;
+      }
+      &.icon-new:after {
+        background-image: url('../img/icons/icon-new.png');
+      }
+      &.icon-percent:after {
+        background-image: url('../img/icons/icon-percent.png');
+      }
+      & > span {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #9a9a69;
+      }
+      & > ul.submenu {
+        display: none;
+        list-style-type: none;
+        margin-top: 5px;
+        margin-left: 10px;
+        a {
+          font-size: 0.8rem;
+        }
+        ul {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}
+
+.category .sitebar {
+  padding: 0 20px 0;
+  .title {
+    color: #000000;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 14px;
+    span {
+      font-weight: 700;
+    }
+  }
+  .menu {
+    padding-bottom:52px;
+    .menu-item {
+      padding-left: 25px;
+      & > a {
+        color: #000000;
+      }
+      .submenu {
+        display: block;
+        .submenu-item {
+          a {
+            font-size: 0.9rem;
+            line-height: 1.9rem;
+          }
+        }
+      }
+    }
+  }
+  .filter-sort {
+    .filter-items {
+      text-decoration: none;
+      color: #7f7f7f;
+      font-weight: 600;
+      .filter-item {
+        padding-left: 25px;
+        list-style: none;
+        &.icon-play {
+          background-position: left 6px;
+        }
+        a {
+          color: inherit;
+          text-decoration: none;
+          font-size: 0.9rem;
+          line-height: 1.9rem;
+          &:hover {
+            color: $brand-color;
+          }
+        }
+      }
+    }
+  }
+  .filter-price {
+    .slider-container {
+      margin-left: 5px;
+      .back-bar {
+        background-color: #e3e3cf;
+        border-radius: 0;
+        background-image: none;
+        .selected-bar {
+          background-color: #9a9a69;
+          background-image: none;
+        }
+        .high, .low {
+          border: none;
+          background-color: #9a9a69;
+          background-image: none;
+          width: 12px;
+          height: 12px;
+          top: -3px;
+        }
+      }
+    }
+    .price-range {
+      margin: 24px 0 54px 0;
+      line-height: 37px;
+      color: #636363;
+      font-weight: 700;
+      span {
+        font-weight: 500;
+      }
+    }
+  }
+  .tags {
+    margin-top: 55px;
+    .tag {
+      display: inline-block;
+      border: 1px solid #ffffff;
+      font-size: 0.8rem;
+      padding: 3px 10px;
+      margin: 0 3px 7px 0;
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
+  .socials {
+    margin-top: 55px;
+    .icons {
+      .icon {
+        display: block;
+        text-decoration: none;
+        background-color: #ffffff;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        color: #cacaca;
+      }
+    }
+    span {
+      font-weight: 600;
+      color: #636363;
+      line-height: 30px;
+      margin-right: 6px;
+    }
+  }
+}

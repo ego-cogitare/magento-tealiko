@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{> head }}
+  <head>
+
+  <body>
+    <div class="holder">
+      {{> notification }}
+      {{> header }}
+      {{> menu }}
+    </div>
+
+    <main>
+      <section class="wrapper clear">
+        <nav class="sitebar homepage left">
+          <ul class="menu">
+            <li class="menu-item icon-menu">
+              <span>Kategorie Wählen...</span>
+            </li>
+            <li class="menu-item icon-new">
+              <a href="#">Neue Produkte</a>
+              <ul class="submenu">
+                <li class="submenu-item">
+                  <a href="#">- Kategorie Unterlink</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#">- Kategorie Unterlink</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#">- Unterlink der Kategorie</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item icon-percent">
+              <a href="#">Angebote</a>
+              <ul class="submenu">
+                <li class="submenu-item">
+                  <a href="#">- Kategorie Unterlink</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#">- Kategorie Unterlink</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#">- Unterlink der Kategorie</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#">Tee</a>
+              <ul class="submenu">
+                <li class="submenu-item">
+                  <a href="#">- Kategorie Unterlink</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#">- Kategorie Unterlink</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#">- Unterlink der Kategorie</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#">Kaffee</a>
+              <ul class="submenu">
+                <li class="submenu-item">
+                  <a href="#">- Kategorie Unterlink</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#">- Kategorie Unterlink</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#">- Unterlink der Kategorie</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#">Geschenke</a>
+              <ul class="submenu">
+                <li class="submenu-item">
+                  <a href="#">- Kategorie Unterlink</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#">- Kategorie Unterlink</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#">- Unterlink der Kategorie</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#">Raritäten</a>
+              <ul class="submenu">
+                <li class="submenu-item">
+                  <a href="#">- Kategorie Unterlink</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#">- Kategorie Unterlink</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#">- Unterlink der Kategorie</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#">Wellness</a>
+              <ul class="submenu">
+                <li class="submenu-item">
+                  <a href="#">- Kategorie Unterlink</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#">- Kategorie Unterlink</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#">- Unterlink der Kategorie</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#">Zubehör</a>
+              <ul class="submenu">
+                <li class="submenu-item">
+                  <a href="#">- Kategorie Unterlink</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#">- Kategorie Unterlink</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#">- Unterlink der Kategorie</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="content right">
+          {{> homepage-slider }}
+        </div>
+      </section>
+
+      <section class="wrapper">
+        {{> advertising-services }}
+      </section>
+
+      <section class="wrapper">
+        <div class="ads clear">
+          <div class="left accessories">
+            <img src="img/homepage/accessories.png" alt="" />
+          </div>
+          <div class="right">
+            <div class="women">
+              <img src="img/homepage/women.png" alt="" />
+            </div>
+            <div class="tea-cup">
+              <img src="img/homepage/tea-cup.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="current-offers-section">
+        <div class="wrapper">
+          <div class="current-offers">
+            <div class="tags-wrapper clear">
+              <div class="text left">Aktuelle Angebote!</div>
+              <div class="tags clear right">
+                <div class="tag left active">Tee Sorten</div>
+                <div class="tag left">Tee Zubehör</div>
+                <div class="tag left">Bio Produkte</div>
+                <div class="tag left">Allerlei Süßes</div>
+                <div class="tag left checked">Nur jetzt!</div>
+              </div>
+            </div>
+            <div class="products">
+              <div class="product">
+                <img src="img/homepage/current-offers/main-offer.jpg" class="picture h100p" alt="" />
+              </div>
+              <div class="product">
+                <span class="label">-5<i class="fa fa-euro"></i></span>
+                <img src="img/homepage/current-offers/offer-01.jpg" class="picture" alt="" />
+                <div class="category">Tee Sorten</div>
+                <div class="title">Tee-Name Xyz 123 <span>(100 g)</span></div>
+                <div class="rating">
+            			<span>☆</span>
+                  <span>☆</span>
+                  <span>☆</span>
+                  <span>☆</span>
+                  <span>☆</span>
+            		</div>
+                <div class="price-wrapper">
+                  <span class="new">15.00 <i class="fa fa-euro"></i></span> inkl. MwSt. <span class="old">20.00 <i class="fa fa-euro"></i></span>
+                </div>
+              </div>
+              <div class="product">
+                <span class="label">-10<i class="fa fa-euro"></i></span>
+                <img src="img/homepage/current-offers/offer-02.jpg" class="picture" alt="" />
+                <div class="category">Tee Sorten</div>
+                <div class="title">Tee-Name Xyz 123 <span>(150 g)</span></div>
+                <div class="rating">
+            			<span>☆</span>
+                  <span>☆</span>
+                  <span>☆</span>
+                  <span>☆</span>
+                  <span>☆</span>
+            		</div>
+                <div class="price-wrapper">
+                  <span class="new">15.00 <i class="fa fa-euro"></i></span> inkl. MwSt. <span class="old">25.00 <i class="fa fa-euro"></i></span>
+                </div>
+              </div>
+              <div class="product">
+                <span class="label">-4<i class="fa fa-euro"></i></span>
+                <img src="img/homepage/current-offers/offer-03.jpg" class="picture" alt="" />
+                <div class="category">Tee Sorten</div>
+                <div class="title">Tee-Name Xyz 123 <span>(100 g)</span></div>
+                <div class="rating">
+            			<span>☆</span>
+                  <span>☆</span>
+                  <span>☆</span>
+                  <span>☆</span>
+                  <span>☆</span>
+            		</div>
+                <div class="price-wrapper">
+                  <span class="new">12.00 <i class="fa fa-euro"></i></span> inkl. MwSt. <span class="old">16.00 <i class="fa fa-euro"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <session>
+        <div class="wrapper">
+          {{> club-banner }}
+        </div>
+      </session>
+
+      <session>
+        <div id="home-slider-2" data-slides-per-view="4" class="wrapper swiper-container featured-products">
+          <div class="title text-center">
+            Neue Produkte in unserem Angebot
+          </div>
+          <div class="tags-wrapper">
+            <div class="tags clear">
+              <div class="tag left">Tee Sorten</div>
+              <div class="tag left">Tee Zubehör</div>
+              <div class="tag left active">Bio Produkte</div>
+              <div class="tag left">Allerlei Süßes</div>
+            </div>
+          </div>
+          <div class="products swiper-wrapper">
+            <div class="product swiper-slide">
+              <span class="label">NEU</span>
+              <img src="img/homepage/new-products/product-01.jpg" class="picture" alt="" />
+              <div class="category">Bio Produkte</div>
+              <div class="title">Produktname Xyz</div>
+              <div class="rating">
+                <span>☆</span>
+                <span>☆</span>
+                <span>☆</span>
+                <span>☆</span>
+                <span>☆</span>
+              </div>
+              <div class="price-wrapper">
+                <span class="new">1.45 <i class="fa fa-euro"></i></span> inkl. MwSt.</span>
+              </div>
+            </div>
+            <div class="product swiper-slide">
+              <span class="label">NEU</span>
+              <img src="img/homepage/new-products/product-02.jpg" class="picture" alt="" />
+              <div class="category">Bio Produkte</div>
+              <div class="title">Produktname Xyz</div>
+              <div class="rating">
+                <span>☆</span>
+                <span>☆</span>
+                <span>☆</span>
+                <span>☆</span>
+                <span>☆</span>
+              </div>
+              <div class="price-wrapper">
+                <span class="new">22.95 <i class="fa fa-euro"></i></span> inkl. MwSt.</span>
+              </div>
+            </div>
+            <div class="product swiper-slide">
+              <span class="label">NEU</span>
+              <img src="img/homepage/new-products/product-03.jpg" class="picture" alt="" />
+              <div class="category">Bio Produkte</div>
+              <div class="title">Produktname Xyz</div>
+              <div class="rating">
+                <span>☆</span>
+                <span>☆</span>
+                <span>☆</span>
+                <span>☆</span>
+                <span>☆</span>
+              </div>
+              <div class="price-wrapper">
+                <span class="new">8.99 <i class="fa fa-euro"></i></span> inkl. MwSt.</span>
+              </div>
+            </div>
+            <div class="product swiper-slide">
+              <span class="label">NEU</span>
+              <img src="img/homepage/new-products/product-04.jpg" class="picture" alt="" />
+              <div class="category">Bio Produkte</div>
+              <div class="title">Produktname Xyz</div>
+              <div class="rating">
+                <span>☆</span>
+                <span>☆</span>
+                <span>☆</span>
+                <span>☆</span>
+                <span>☆</span>
+              </div>
+              <div class="price-wrapper">
+                <span class="new">12.99 <i class="fa fa-euro"></i></span> inkl. MwSt.</span>
+              </div>
+            </div>
+            <div class="product swiper-slide">
+              <span class="label">NEU</span>
+              <img src="img/homepage/new-products/product-01.jpg" class="picture" alt="" />
+              <div class="category">Bio Produkte</div>
+              <div class="title">Produktname Xyz</div>
+              <div class="rating">
+                <span>☆</span>
+                <span>☆</span>
+                <span>☆</span>
+                <span>☆</span>
+                <span>☆</span>
+              </div>
+              <div class="price-wrapper">
+                <span class="new">1.45 <i class="fa fa-euro"></i></span> inkl. MwSt.</span>
+              </div>
+            </div>
+          </div>
+          <div class="navigate button-prev fa fa-angle-left"></div>
+          <div class="navigate button-next fa fa-angle-right"></div>
+        </div>
+      </session>
+
+      <section>
+        <div class="about-us">
+          <div class="wrapper">
+            <div class="heading">Über tealiko</div>
+            <div class="title">Stet clita kasd gubergren no <br/>sea takimata sanctus</div>
+            <div class="description">
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+              eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+              voluptua. At vero eos et accusam et justo duo dolores et ea rebum eos et
+              accusam et justo duo.
+            </div>
+            <div class="btn">
+              <a href="#">KONTAKT ZU TEALIKO</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrapper" style="padding-top: 70px;">
+          <div class="heading-1 text-center">Das sagen unsere Kunden</div>
+          <div class="testimonials">
+            <div class="testimonial">
+              <div class="picture">
+                <img src="img/homepage/testimonials/picture-01.png" alt="" />
+              </div>
+              <div class="description">
+                „Eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores
+                sanctus est.“
+              </div>
+            </div>
+            <div class="testimonial">
+              <div class="picture">
+                <img src="img/homepage/testimonials/picture-02.png" alt="" />
+              </div>
+              <div class="description">
+                „Eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores
+                sanctus est.“
+              </div>
+            </div>
+            <div class="testimonial">
+              <div class="picture">
+                <img src="img/homepage/testimonials/picture-03.png" alt="" />
+              </div>
+              <div class="description">
+                „Eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores
+                sanctus est.“
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    {{> footer }}
+    {{> copyright }}
+  </body>
+</html>

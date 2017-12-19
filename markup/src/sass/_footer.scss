@@ -1,0 +1,132 @@
+footer {
+  height: 497px;
+  background: $brand-color url('../img/footer/footer-bg.png') no-repeat 80% bottom;
+  color: #ffffff;
+  padding-top: 80px;
+  padding-bottom: 24px;
+
+  .logo {
+    margin-bottom: 15px;
+  }
+
+  .columns {
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 44px;
+
+    .column {
+      text-shadow: 0 0 0 #cccccc, 0px 1px #aaaaaa;
+      vertical-align: top;
+
+      .title {
+        text-transform: uppercase;
+        font-weight: 900;
+        font-size: 1.1rem;
+        padding-bottom: 28px;
+      }
+
+      .text {
+        position: relative;
+        padding-bottom: 14px;
+        line-height: 20px;
+        color: #ffffff;
+
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        &[class*="icon-"] {
+          padding-left: 40px;
+
+          &:before {
+            position: absolute;
+            display: block;
+            left: 0;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            font-family: 'FontAwesome';
+            font-size: 1.25rem;
+          }
+        }
+
+        &.icon-phone:before {
+          content: "\f095";
+        }
+
+        &.icon-envelope:before {
+          content: "\f003";
+        }
+
+        &.icon-check {
+          padding-left: 30px;
+
+          &:before {
+            content: "\f00c";
+          }
+        }
+
+        &.icon-facebook:before {
+          content: "\f230";
+          font-size: 2.3rem;
+          top: 10px;
+        }
+      }
+    }
+
+  }
+
+  .write-us {
+    border-top: 1px solid #c5da47;
+    padding-top: 40px;
+
+    .email-form {
+      position: relative;
+
+      &:before {
+        position: absolute;
+        content: '\f003';
+        display: block;
+        font-family: 'FontAwesome';
+        top: 0;
+        left: -30px;
+        width: 40px;
+        height: 42px;
+        background-color: #ffffff;
+        color: #719602;
+        text-align: right;
+        font-size: 1.4rem;
+        box-sizing: border-box;
+        padding-top: 10px;
+      }
+    }
+
+    .text {
+      line-height: 42px;
+      font-weight: 600;
+      font-size: 1.07rem;
+
+      span {
+        font-weight: 800;
+      }
+    }
+
+    .input {
+      @extend .input;
+      width: 340px;
+    }
+
+    .btn {
+      @extend .btn;
+      background-color: #9a9a69;
+      text-transform: uppercase;
+      font-weight: 900;
+      width: 130px;
+      font-size: 0.9rem;
+    }
+  }
+
+}

@@ -1,0 +1,56 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Pager template
+ *
+ * @see \Magento\Theme\Block\Html\Pager
+ */
+?>
+<?php if ($block->getCollection()->getSize()): ?>
+    <?php if ($block->getLastPageNum()>1): ?>
+    <!-- <div class="pagination">
+      <div class="page prev">
+        <a href="#" class="fa fa-angle-left"></a>
+      </div>
+      <div class="page active">
+        <a href="#">1</a>
+      </div>
+      <div class="page">
+        <a href="#">2</a>
+      </div>
+      <div class="page">
+        <a href="#">3</a>
+      </div>
+      <div class="page next">
+        <a href="#" class="fa fa-angle-right"></a>
+      </div>
+    </div> -->
+
+    <div class="pagination right">
+        <?php /* @escapeNotVerified */ echo __('Seite') ?>:
+
+        <?php foreach ($block->getFramePages() as $_page): ?>
+            <?php if ($block->isPageCurrent($_page)): ?>
+                <span class="page active">
+                    <?php /* @escapeNotVerified */ echo $_page ?>
+                </span>
+            <?php else: ?>
+                <span class="page">
+                    <a href="<?php /* @escapeNotVerified */ echo $block->getPageUrl($_page) ?>" >
+                        <?php /* @escapeNotVerified */ echo $_page ?>
+                    </a>
+                </span>
+            <?php endif;?>
+        <?php endforeach;?>
+    </div>
+    <?php endif; ?>
+
+<?php endif ?>

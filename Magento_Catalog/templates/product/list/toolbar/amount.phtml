@@ -1,0 +1,31 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Product list toolbar
+ *
+ * @var $block \Magento\Catalog\Block\Product\ProductList\Toolbar
+ */
+use Magento\Catalog\Model\Product\ProductList\Toolbar;
+?>
+<div class="products-amount left">
+  <?php if ($block->getLastPageNum() > 1): ?>
+      <?php /* @escapeNotVerified */ echo __('Zeige %1-%2 von %3 Produkten',
+          $block->getFirstNum(),
+          $block->getLastNum(),
+          $block->getTotalNum()) ?>
+  <?php elseif ($block->getTotalNum() == 1): ?>
+      <?php /* @escapeNotVerified */ echo __('%1 Zeige',
+         $block->getTotalNum()) ?>
+  <?php else: ?>
+      <?php /* @escapeNotVerified */ echo __('%1 Zeige',
+          $block->getTotalNum()) ?>
+  <?php endif; ?>
+</div>

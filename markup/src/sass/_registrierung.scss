@@ -1,0 +1,66 @@
+.registration {
+  @extend .gray-border;
+  padding: 40px 50px;
+  margin: 38px 0 100px 0;
+  .heading-1 {
+    margin-bottom: 16px;
+  }
+  .picture {
+    img {
+      height: 180px;
+    }
+  }
+  .salutation {
+    margin: 32px 0 20px;
+  }
+  .columns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    .column {
+      width: 512px;
+      ::placeholder {
+        color: #8b8b8b;
+      }
+      .separator {
+        border-top: 1px solid #e1e1d2;
+        margin: 43px 0;
+      }
+      input {
+        width: 100%;
+        color: #707070;
+        height: 50px;
+      }
+      .club-agreement {
+        .left {
+          input {
+            width: 18px;
+          }
+          width: 30px;
+        }
+        .right {
+          width: calc(100% - 30px);
+        }
+      }
+      .row {
+        margin-bottom: 20px;
+      }
+      .columns-3 {
+        display: flex;
+        justify-content: space-between;
+        .select {
+          width: 31%;
+        }
+      }
+      .text a {
+        color: inherit;
+        font-weight: 800;
+      }
+    }
+  }
+  .btn-green {
+    margin: 0 auto;
+    display: block;
+    width: 672px;
+  }
+}

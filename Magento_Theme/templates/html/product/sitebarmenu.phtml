@@ -1,0 +1,39 @@
+<?php $columnsLimit = $block->getColumnsLimit() ?: 0; ?>
+<?php $_menu = $block->getHtml('level-top', 'submenu', $columnsLimit) ?>
+<div class="title">Kategorien: <span><?php echo strip_tags($block->getBlockHtml('page.main.title')); ?></span></div>
+
+<ul class="menu">
+  <?php /* @escapeNotVerified */ echo $_menu; ?>
+</ul>
+<div class="tags text">
+  <div class="tag">
+    <a href="#">Tag Name Xyz</a>
+  </div>
+  <div class="tag">
+    <a href="#">Tag Name Xyz</a>
+  </div>
+  <div class="tag">
+    <a href="#">Tag Cloud- Name</a>
+  </div>
+  <div class="tag">
+    <a href="#">Tag Name</a>
+  </div>
+  <div class="tag">
+    <a href="#">Tag Name Xyz 12</a>
+  </div>
+  <div class="tag">
+    <a href="#">Tag Name XX</a>
+  </div>
+  <div class="tag">
+    <a href="#">Tag Name Xyz</a>
+  </div>
+  <div class="tag">
+    <a href="#">Tag Name Xyz</a>
+  </div>
+  <div class="tag">
+    <a href="#">Tag Cloud- Name</a>
+  </div>
+  <div class="tag">
+    <a href="#">Tag Name 12</a>
+  </div>
+</div>

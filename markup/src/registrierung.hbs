@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{> head }}
+  <head>
+
+  <body>
+    <div class="holder">
+      {{> notification }}
+      {{> header }}
+      {{> menu }}
+    </div>
+
+    <main>
+      <section>
+        <div class="wrapper">
+          <div class="registration">
+            <form action="" method="post">
+              <div class="clear">
+                <div class="left">
+                  <div class="heading-1">
+                    Registrierung
+                  </div>
+                  <div class="text">
+                    Geben Sie Ihre Daten bitte hier ein.
+                  </div>
+                  <div class="text">
+                    Auf die mit * markierten Angaben können wir bei Ihrer ersten Bestellung nicht verzichten.
+                  </div>
+                  <div class="salutation">
+                    <select class="select">
+                      <option>Bitte Anrede wählen...</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="right picture">
+                  <img src="img/registrierung/tea-time.png" alt="It's always tea time" />
+                </div>
+              </div>
+              <div class="columns">
+                <div class="column">
+                  <div class="row">
+                    <input type="text" class="input" placeholder="Titel" />
+                  </div>
+                  <div class="row">
+                    <input type="text" class="input" placeholder="Vorname" />
+                  </div>
+                  <div class="row">
+                    <input type="text" class="input" placeholder="Nachname *" required />
+                  </div>
+                  <div class="row">
+                    <input type="text" class="input" placeholder="Firma" />
+                  </div>
+                  <div class="row">
+                    <input type="text" class="input" placeholder="Strasse *" required />
+                  </div>
+                  <div class="row">
+                    <input type="text" class="input" placeholder="Hausnr. *" required />
+                  </div>
+                  <div class="row">
+                    <input type="text" class="input" placeholder="PLZ *" required />
+                  </div>
+                  <div class="row">
+                    <input type="text" class="input" placeholder="Ort *" required />
+                  </div>
+                  <div class="row">
+                    <select class="select w100p">
+                      <option>Bitte Anrede wählen...</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="row">
+                    <input type="text" class="input" placeholder="Telefon" />
+                  </div>
+                  <div class="row">
+                    <input type="text" class="input" placeholder="Fax" />
+                  </div>
+                  <div class="row">
+                    <input type="email" class="input" placeholder="Email *" required />
+                  </div>
+                  <div class="row">
+                    <input type="password" class="input" placeholder="Passwort *" required />
+                  </div>
+                  <div class="row">
+                    <input type="text" class="input" placeholder="Passwort Wiederholung *" required />
+                  </div>
+                  <div class="row columns-3">
+                    <select class="select">
+                      <option>Geburtstag...</option>
+                    </select>
+                    <select class="select">
+                      <option>Geburtsmonat...</option>
+                    </select>
+                    <select class="select">
+                      <option>Geburtsjahr...</option>
+                    </select>
+                  </div>
+                  <div class="row">
+                    <div class="separator"></div>
+                  </div>
+                  <div class="row">
+                    <select class="select w100p">
+                      <option>Bitte Anrede wählen...</option>
+                    </select>
+                  </div>
+                  <div class="row club-agreement clear">
+                    <div class="left">
+                      <input type="checkbox" class="" />
+                    </div>
+                    <div class="text right">
+                      Ich möchte die <a href="#">Tealiko-Club Premiummitgliedschaft</a> kostenfrei für
+                      3 Monate testen. Die Mitgliedschaft endet automatisch.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <button type="submit" class="btn-green">Jetzt bei tealiko registrieren (SSL verschlüsselt)</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        {{> advertising-services }}
+      </section>
+    </main>
+
+    {{> footer }}
+    {{> copyright }}
+  </body>
+</html>
