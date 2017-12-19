@@ -27,7 +27,7 @@
     <div class="heading-1"><?php echo $_product->getName() ?></div>
     <div class="clear">
       <?php $ratingData = $rating->getEntitySummary($_product->getId())->getData(); ?>
-      <?php if (!empty($ratingData['sum']) && !empty($ratingData['scountum'])) : ?>
+      <?php if (!empty($ratingData['sum']) && !empty($ratingData['count'])) : ?>
         <div class="text left fw-600">Kunden-Wertung</div>
         <div class="rating left">☆☆☆☆☆<span class="progress" style="width: <?php printf('%2d', $ratingData['sum'] / $ratingData['count']) ?>%"></span></div>
       <?php endif;?>
@@ -67,10 +67,14 @@
     </p>
     <?php echo $_product->getDescription() ?>
     <div class="divider"></div>
-    <form action="" method="post">
+    <form action="<?php echo $block->getSubmitUrl($_product) ?>" method="post">
+      <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+      <input type="hidden" name="selected_configurable_option" value="" />
+      <input type="hidden" name="related_product" id="related-products-field" value="" />
+      <input name="form_key" type="hidden" value="GDgXGjCrQyLBs7lr">
       <div class="count fw-500">
         <label>Anzahl</label>
-        <input type="number" class="input-number" value="2" min="1" max="99">
+        <input type="number" name="qty" maxlength="3" value="1" min="1" max="999" title="Qty" class="input-number" />
       </div>
       <div class="options">
         <div class="option clear">
@@ -194,7 +198,7 @@
           <div class="category"><?php //echo $relatedProduct->getCategory() ?>ddd</div>
           <div class="title"><?php echo $relatedProduct->getName() ?></div>
           <?php $ratingData = $rating->getEntitySummary($_product->getId())->getData(); ?>
-          <?php if (!empty($ratingData['sum']) && !empty($ratingData['scountum'])) : ?>
+          <?php if (!empty($ratingData['sum']) && !empty($ratingData['count'])) : ?>
             <div class="rating">☆☆☆☆☆<span class="progress" style="width: <?php printf('%2d', $ratingData['sum'] / $ratingData['count']); ?>%"></span></div>
           <?php endif; ?>
           <div class="price-wrapper">

@@ -38,7 +38,7 @@ $(document).ready(function() {
     slidesPerView: $('#home-slider-2').data('slides-per-view'),
     spaceBetween: 30,
     paginationClickable: true,
-    loop: false,
+    loop: true,
     mousewheelControl: false,
     speed: 1000,
     nextButton: '#home-slider-2 .button-next',

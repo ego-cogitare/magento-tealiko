@@ -73,6 +73,10 @@
       .slider-container {
         width: auto;
         position: relative;
+        .rating {
+          @extend .rating-widget;
+          margin: 4px;
+        }
         .swiper-container {
           width: 470px;
           height: 360px;
@@ -128,6 +132,11 @@
         background-color: $gray-color;
         width: 350px;
         padding: 10px 15px;
+        &.text {
+          ul {
+            margin-left: 25px;
+          }
+        }
         .divider {
           border-top: 1px solid #e1dcd1;
           width: 100%;
@@ -216,6 +225,9 @@
         background-color: #fbfbea;
         padding: 10px 20px;
         display: none;
+        ul {
+          margin-left: 25px;
+        }
       }
       .socials {
         margin-top: 55px;

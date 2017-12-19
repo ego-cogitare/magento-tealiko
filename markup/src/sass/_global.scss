@@ -103,6 +103,35 @@ body {
   padding: 7px 4px 7px 10px;
 }
 
+.rating-widget {
+  margin-top: 6px;
+  display: inline-block;
+  position: relative;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: #b6b68d;
+  .progress {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    &:before {
+      letter-spacing: 0;
+      content: "\2605" "\2605" "\2605" "\2605" "\2605";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  & > span {
+    display: inline-block;
+  }
+}
+
 .icon-play {
   background: url('../img/icons/icon-play.png') no-repeat left 2px;
 }
