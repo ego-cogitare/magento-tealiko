@@ -1,39 +1,60 @@
 <?xml version="1.0"?>
 <page layout="custom_home" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <update handle="default_head_blocks" />
-    <body>
-      <referenceBlock name="report.bugs" remove="true" />
-      <referenceBlock name="section-1" remove="true" />
-      <referenceBlock name="section-2" remove="true" />
-      <referenceBlock name="section-3" remove="true" />
-
-      <referenceContainer name="holder-wrapper">
-        <block class="Magento\Theme\Block\Html\Header" name="header" as="header" template="Magento_Theme::html/header.phtml" after="topmessages" />
-        <block class="Magento\Theme\Block\Html\Topmenu" name="mainmenu" template="Magento_Theme::html/topmenu.phtml" ttl="3600" after="header" />
-      </referenceContainer>
-
-      <referenceContainer name="main-wrapper">
-        <container htmlTag="section">
-          <container htmlTag="div" htmlClass="wrapper product clear">
-            <container htmlTag="div" htmlClass="sitebar left">
-              <block class="Magento\Theme\Block\Html\Topmenu" template="Magento_Theme::html/product/sitebarmenu.phtml" ttl="3600" />
-            </container>
-            <container htmlTag="div" htmlClass="content right">
-              <block class="Magento\Catalog\Block\Product\View" template="Magento_Catalog::product/view/product.phtml"/>
-            </container>
+  <update handle="default_head_blocks" />
+  <body>
+    <referenceBlock name="report.bugs" remove="true" />
+    <referenceBlock name="section-1" remove="true" />
+    <referenceBlock name="section-2" remove="true" />
+    <referenceBlock name="section-3" remove="true" />
+    <referenceBlock name="reviews.tab" remove="true" />
+    <referenceContainer name="holder-wrapper">
+      <block class="Magento\Theme\Block\Html\Header" name="header" as="header" template="Magento_Theme::html/header.phtml" after="topmessages" />
+      <block class="Magento\Theme\Block\Html\Topmenu" name="mainmenu" template="Magento_Theme::html/topmenu.phtml" ttl="3600" after="header" />
+    </referenceContainer>
+    <referenceContainer name="main-wrapper">
+      <container htmlTag="section">
+        <container htmlTag="div" htmlClass="wrapper product clear">
+          <container htmlTag="div" htmlClass="sitebar left">
+            <block class="Magento\Theme\Block\Html\Topmenu" template="Magento_Theme::html/product/sitebarmenu.phtml" ttl="3600" />
+          </container>
+          <container htmlTag="div" htmlClass="content right">
+            <block class="Magento\Framework\View\Element\Template" name="content" />
+            <block class="Magento\Catalog\Block\Product\View" name="product.overview" template="Magento_Catalog::product/view/overview.phtml" before="-" />
+            <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.details" template="Magento_Catalog::product/view/details.phtml" after="product.overview">
+              <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.description" template="Magento_Catalog::product/view/attribute.phtml" before="-" group="detailed_info">
+                <arguments>
+                  <argument name="at_call" xsi:type="string">getDescription</argument>
+                  <argument name="at_code" xsi:type="string">description</argument>
+                  <argument name="css_class" xsi:type="string">description</argument>
+                  <argument name="at_label" xsi:type="string">none</argument>
+                  <argument name="title" translate="true" xsi:type="string">Beschreibung</argument>
+                </arguments>
+              </block>
+              <block class="Magento\Catalog\Block\Product\View\Attributes" name="product.attributes" template="Magento_Catalog::product/view/attributes.phtml" after="product.info.description" group="detailed_info">
+                <arguments>
+                  <argument translate="true" name="title" xsi:type="string">Zubereitung</argument>
+                </arguments>
+              </block>
+              <block class="Magento\Review\Block\Product\Review" name="product.info.review" template="Magento_Review::review.phtml" group="detailed_info">
+                <block class="Magento\Review\Block\Product\View\ListView" name="product_additional_data" before="-" template="Magento_Review::product/view/list.phtml" />
+                <block class="Magento\Review\Block\Form" name="product.review.form" as="review_form">
+                  <container name="product.review.form.fields.before" as="form_fields_before" label="Review Form Fields Before" htmlTag="div" htmlClass="rewards" />
+                </block>
+              </block>
+            </block>
+            <block class="Magento\Catalog\Block\Product\View" name="product.related.products" template="Magento_Catalog::product/view/related.phtml" after="product_additional_data" />
           </container>
         </container>
-        <container htmlTag="section">
-          <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::html/advertising.phtml" />
-        </container>
-      </referenceContainer>
-
-      <referenceContainer name="footer-wrapper">
-        <block class="Magento\Theme\Block\Html\Footer" name="footer" as="footer" template="Magento_Theme::html/footer.phtml" before="-" />
-      </referenceContainer>
-
-      <referenceContainer name="copyright-wrapper">
-        <block class="Magento\Framework\View\Element\Template" name="copyright" template="Magento_Theme::html/copyright.phtml" />
-      </referenceContainer>
-    </body>
+      </container>
+      <container htmlTag="section">
+        <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::html/advertising.phtml" />
+      </container>
+    </referenceContainer>
+    <referenceContainer name="footer-wrapper">
+      <block class="Magento\Theme\Block\Html\Footer" name="footer" as="footer" template="Magento_Theme::html/footer.phtml" before="-" />
+    </referenceContainer>
+    <referenceContainer name="copyright-wrapper">
+      <block class="Magento\Framework\View\Element\Template" name="copyright" template="Magento_Theme::html/copyright.phtml" />
+    </referenceContainer>
+  </body>
 </page>

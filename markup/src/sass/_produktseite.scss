@@ -71,7 +71,7 @@
         font-weight: 700;
       }
       .slider-container {
-        width: auto;
+        width: 470px;
         position: relative;
         .rating {
           @extend .rating-widget;
@@ -227,6 +227,13 @@
         display: none;
         ul {
           margin-left: 25px;
+        }
+        th {
+          text-align: right;
+          padding-right: 8px;
+        }
+        caption {
+          display: none;
         }
       }
       .socials {

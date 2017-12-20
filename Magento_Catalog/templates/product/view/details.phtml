@@ -1,0 +1,48 @@
+<?php if ($detailedInfoGroup = $block->getGroupChildNames('detailed_info', 'getChildHtml')): ?>
+    <?php
+      $layout = $block->getLayout();
+      $tabsContent = '';
+      $detailedInfoGroup[] = $detailedInfoGroup[0];
+      unset($detailedInfoGroup[0]);
+    ?>
+    <div class="tabs-wrapper">
+        <ul class="tabs">
+            <?php foreach ($detailedInfoGroup as $key => $name) : ?>
+                <?php
+                    $html = $layout->renderElement($name);
+                    if (!trim($html)) {
+                        continue;
+                    }
+                    $alias = $layout->getElementAlias($name);
+                    $label = $block->getChildData($alias, 'title');
+                    $tabsContent .= '
+                      <div id="tab-' . $key . '" class="tabs-content text">
+                        ' .$html . '
+                      </div>
+                    ';
+                ?>
+                <li class="tab<?php echo $key === 1 ? ' active' : '' ?>">
+                    <a href="#tab-<?php echo $key;?>">
+                        <?php echo $label; ?>
+                    </a>
+                </li>
+            <?php endforeach;?>
+        </ul>
+
+        <!-- Tabs content -->
+        <?php echo $tabsContent ?>
+
+        <!-- Social share widget -->
+        <div class="socials clear">
+          <span class="left">Teilen:</span>
+          <div class="icons left">
+            <a href="#" class="icon fa fa-facebook"></a>
+            <a href="#" class="icon fa fa-pinterest"></a>
+            <a href="#" class="icon fa fa-twitter"></a>
+            <a href="#" class="icon fa fa-google-plus"></a>
+            <a href="#" class="icon fa fa-instagram"></a>
+          </div>
+        </div>
+    </div>
+
+<?php endif; ?>

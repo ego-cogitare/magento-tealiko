@@ -2095,7 +2095,7 @@ footer {
       color: #353535;
       font-weight: 700; }
     .wrapper.product .content .product-info .slider-container {
-      width: auto;
+      width: 470px;
       position: relative; }
       .wrapper.product .content .product-info .slider-container .rating {
         margin: 4px; }
@@ -2212,6 +2212,11 @@ footer {
         display: none; }
         .wrapper.product .content .tabs-wrapper .tabs-content ul {
           margin-left: 25px; }
+        .wrapper.product .content .tabs-wrapper .tabs-content th {
+          text-align: right;
+          padding-right: 8px; }
+        .wrapper.product .content .tabs-wrapper .tabs-content caption {
+          display: none; }
       .wrapper.product .content .tabs-wrapper .socials {
         margin-top: 55px; }
         .wrapper.product .content .tabs-wrapper .socials .icons .icon {

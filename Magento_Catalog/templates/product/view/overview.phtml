@@ -1,19 +1,4 @@
 <?php
-/**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
-
-// @codingStandardsIgnoreFile
-
-/**
- * Product media data template
- *
- * @var $block \Magento\Catalog\Block\Product\View\Gallery
- */
-?>
-
-<?php
   $_product = $block->getProduct();
   $_images = $_product->getMediaGalleryImages();
 
@@ -71,7 +56,8 @@
       <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
       <input type="hidden" name="selected_configurable_option" value="" />
       <input type="hidden" name="related_product" id="related-products-field" value="" />
-      <input name="form_key" type="hidden" value="GDgXGjCrQyLBs7lr">
+      <?php echo $block->getBlockHtml('formkey'); ?>
+      <?php echo $block->getChildHtml('form_top'); ?>
       <div class="count fw-500">
         <label>Anzahl</label>
         <input type="number" name="qty" maxlength="3" value="1" min="1" max="999" title="Qty" class="input-number" />
@@ -136,7 +122,7 @@
   </div>
 </div>
 
-<div class="tabs-wrapper">
+<!-- <div class="tabs-wrapper">
   <ul class="tabs">
     <li class="tab active">
       <a href="#tab-1">Beschreibung</a>
@@ -179,35 +165,4 @@
       <a href="#" class="icon fa fa-instagram"></a>
     </div>
   </div>
-</div>
-
-<?php $relatedProductIds = $product->getRelatedProductIds(); ?>
-<?php if (!empty($relatedProductIds)) : ?>
-  <div id="home-slider-2" data-slides-per-view="3" class="swiper-container featured-products">
-    <div class="title text-center">
-      Produkte die Ihnen auch gefallen könnten:
-    </div>
-    <div class="products swiper-wrapper">
-      <?php foreach ($relatedProductIds as $id) : ?>
-        <?php $relatedProduct = $objectManager->create('Magento\Catalog\Model\Product')->load($id); ?>
-        <div class="product swiper-slide">
-          <span class="label bg-brown">-5<i class="fa fa-euro"></i></span>
-          <a href="<?php echo $relatedProduct->getProductUrl() ?>">
-            <?php echo $block->getImage($relatedProduct, 'category_page_list')->toHtml() ?>
-          </a>
-          <div class="category"><?php //echo $relatedProduct->getCategory() ?>ddd</div>
-          <div class="title"><?php echo $relatedProduct->getName() ?></div>
-          <?php $ratingData = $rating->getEntitySummary($_product->getId())->getData(); ?>
-          <?php if (!empty($ratingData['sum']) && !empty($ratingData['count'])) : ?>
-            <div class="rating">☆☆☆☆☆<span class="progress" style="width: <?php printf('%2d', $ratingData['sum'] / $ratingData['count']); ?>%"></span></div>
-          <?php endif; ?>
-          <div class="price-wrapper">
-            <span class="new"><?php printf('%.2f', $relatedProduct->getFinalPrice()); ?> <i class="fa fa-euro"></i></span> inkl. MwSt.<span class="old">20.00 <i class="fa fa-euro"></i></span>
-          </div>
-        </div>
-      <?php endforeach; ?>
-    </div>
-    <div class="navigate button-prev fa fa-angle-left"></div>
-    <div class="navigate button-next fa fa-angle-right"></div>
-  </div>
-<?php endif; ?>
+</div> -->

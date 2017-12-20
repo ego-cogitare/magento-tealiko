@@ -1,0 +1,39 @@
+<?php
+  $_product = $block->getProduct();
+  $_images = $_product->getMediaGalleryImages();
+
+  $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+  $product = $objectManager->create('Magento\Catalog\Model\Product')->load($_product->getId());
+  $rating = $objectManager->create('Magento\Review\Model\Rating');
+  
+  $relatedProductIds = $product->getRelatedProductIds();
+?>
+<?php if (!empty($relatedProductIds)) : ?>
+  <div id="home-slider-2" data-slides-per-view="3" class="swiper-container featured-products">
+    <div class="title text-center">
+      Produkte die Ihnen auch gefallen könnten:
+    </div>
+    <div class="products swiper-wrapper">
+      <?php foreach ($relatedProductIds as $id) : ?>
+        <?php $relatedProduct = $objectManager->create('Magento\Catalog\Model\Product')->load($id); ?>
+        <div class="product swiper-slide">
+          <span class="label bg-brown">-5<i class="fa fa-euro"></i></span>
+          <a href="<?php echo $relatedProduct->getProductUrl() ?>">
+            <?php echo $block->getImage($relatedProduct, 'category_page_list')->toHtml() ?>
+          </a>
+          <div class="category"><?php //echo $relatedProduct->getCategory() ?>ddd</div>
+          <div class="title"><?php echo $relatedProduct->getName() ?></div>
+          <?php $ratingData = $rating->getEntitySummary($_product->getId())->getData(); ?>
+          <?php if (!empty($ratingData['sum']) && !empty($ratingData['count'])) : ?>
+            <div class="rating">☆☆☆☆☆<span class="progress" style="width: <?php printf('%2d', $ratingData['sum'] / $ratingData['count']); ?>%"></span></div>
+          <?php endif; ?>
+          <div class="price-wrapper">
+            <span class="new"><?php printf('%.2f', $relatedProduct->getFinalPrice()); ?> <i class="fa fa-euro"></i></span> inkl. MwSt.<span class="old">20.00 <i class="fa fa-euro"></i></span>
+          </div>
+        </div>
+      <?php endforeach; ?>
+    </div>
+    <div class="navigate button-prev fa fa-angle-left"></div>
+    <div class="navigate button-next fa fa-angle-right"></div>
+  </div>
+<?php endif; ?>
