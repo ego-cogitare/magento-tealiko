@@ -131,4 +131,58 @@ $(document).ready(function() {
       ? $('body').addClass('small')
       : $('body').removeClass('small');
   });
+
+  var cart = window.cart = {
+
+    $el: $('#cart-widget'),
+
+    setCount: function(count) {
+      this.$el.find('.products').text(count);
+    },
+
+    setPrice: function(price) {
+      this.$el.find('.price').text(price);
+    },
+
+    productAdd: function(data, success, error) {
+      $.post($(this).attr('action'), data).then(success, error);
+    },
+
+    refresh: function(success, error) {
+      var url = '/customer/section/load/'
+        , data = {
+            sections: 'cart,messages',
+            update_section_id: true,
+            _: Date.now()
+        };
+
+      $.get(url, data).then(
+        function(response) {
+          var price = $(response.cart.subtotal).text()
+            , count = response.cart.summary_count;
+
+          this.setCount(count);
+          this.setPrice(price);
+          typeof success === 'function' && success(response);
+        }.bind(this),
+        error
+      );
+    }
+  };
+
+  $('form#add-to-cart').on('submit', function(e) {
+    e.preventDefault();
+
+    cart.productAdd.call(
+      this,
+      $(this).serialize(),
+      function(response) {
+        cart.refresh();
+      },
+      function(error) {
+        console.log(error);
+      }
+    );
+  });
+
 });

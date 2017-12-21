@@ -1,0 +1,17 @@
+<?php
+  $steps = [
+    1 => 'Übersicht',
+    2 => 'Anmelden',
+    3 => 'Zahlungsart',
+    4 => 'Versand',
+  ];
+?>
+<div class="wrapper">
+  <div class="payment-steps clear">
+    <?php foreach ($steps as $step => $title): ?>
+    <div class="step<?php echo ($step == $block->getStep()) ? ' active' : '' ?>">
+      <?php echo $step . '. ' . $title ?>
+    </div>
+    <?php endforeach; ?>
+  </div>
+</div>

@@ -52,10 +52,12 @@
     </p>
     <?php echo $_product->getDescription() ?>
     <div class="divider"></div>
-    <form action="<?php echo $block->getSubmitUrl($_product) ?>" method="post">
+    <form action="<?php echo $block->getSubmitUrl($_product) ?>" method="post" id="add-to-cart">
       <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
       <input type="hidden" name="selected_configurable_option" value="" />
-      <input type="hidden" name="related_product" id="related-products-field" value="" />
+      <input type="hidden" name="related_product" value="" />
+      <input type="hidden" name="super_attribute[90]" value="56" />
+      <input type="hidden" name="super_attribute[137]" value="169" />
       <?php echo $block->getBlockHtml('formkey'); ?>
       <?php echo $block->getChildHtml('form_top'); ?>
       <div class="count fw-500">
@@ -65,7 +67,7 @@
       <div class="options">
         <div class="option clear">
           <div class="switch left">
-            <input type="radio" id="option-1" name="product-weight" checked />
+            <input type="radio" id="option-1" name="" checked />
             <label for="option-1"></label>
           </div>
           <div class="weight left">
@@ -79,7 +81,7 @@
         </div>
         <div class="option clear">
           <div class="switch left">
-            <input type="radio" id="option-2" name="product-weight" />
+            <input type="radio" id="option-2" name="" />
             <label for="option-2"></label>
           </div>
           <div class="weight left">
@@ -93,7 +95,7 @@
         </div>
         <div class="option clear">
           <div class="switch left">
-            <input type="radio" id="option-3" name="product-weight" />
+            <input type="radio" id="option-3" name="" />
             <label for="option-3"></label>
           </div>
           <div class="weight left">
