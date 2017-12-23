@@ -12,6 +12,7 @@
     <css src="css/main.css" />
     <link src="js/jquery-1.12.4.min.js" />
     <link src="js/jquery.range.js" />
+    <link src="js/js.cookie.js" />
     <link src="js/swiper.min.js" />
     <link src="js/app.js" defer="defer" />
   </head>

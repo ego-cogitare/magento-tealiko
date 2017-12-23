@@ -4,7 +4,11 @@
     <body>
         <referenceBlock name="report.bugs" remove="true"/>
 
-        <referenceContainer name="holder-wrapper">
+        <referenceContainer name="notification-wrapper">
+          <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::html/notification.phtml" />
+        </referenceContainer>
+
+        <referenceContainer name="notification-wrapper">
           <block class="Magento\Theme\Block\Html\Header" name="header" as="header" template="Magento_Theme::html/header.phtml" after="topmessages" />
           <block class="Magento\Theme\Block\Html\Topmenu" name="mainmenu" template="Magento_Theme::html/topmenu.phtml" ttl="3600" after="header" />
         </referenceContainer>

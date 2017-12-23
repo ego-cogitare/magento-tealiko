@@ -267,6 +267,13 @@ body {
   }
 }
 
+.messages {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 .notification {
   text-align: center;
   color: $dark-green-color;
@@ -278,6 +285,18 @@ body {
   box-shadow: rgb(153, 153, 153) 0px 2px 5px 0px;
   position: relative;
   background-color: $gray-color;
+  &.error {
+    color: #CC0000;
+    .text {
+      color: #CC0000;
+    }
+  }
+  &.success {
+    color: #719602;
+    .text {
+      color: #719602;
+    }
+  }
   i {
     font-weight: bold;
     text-decoration: italic;

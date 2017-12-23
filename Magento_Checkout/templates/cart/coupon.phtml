@@ -1,0 +1,62 @@
+<div class="order-info">
+  <div class="block">
+    <div class="heading-3">
+      *Tealiko Club
+    </div>
+    <div class="text with-bg">
+      Sie sparen bei dieser Bestellung <b>0,00 €.</b>
+    </div>
+    <div class="text with-icon">
+      Tealiko Club-Mitglieder erhalten bei ihrer Bestellung bis zu
+      <u>50% Rabatt</u> auf Produkte in unserem Online-Shop.
+    </div>
+    <div class="btn-green">
+      <a href="#">Mehr erfahren</a>
+    </div>
+  </div>
+  <div class="block">
+    <form action="<?php echo $block->getUrl('checkout/cart/couponPost') ?>" method="post">
+      <input type="hidden" name="remove" id="remove-coupon" value="0" />
+      <div class="heading-3">
+        Gutschein Eingabe
+      </div>
+      <div class="text">
+        Dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore.
+      </div>
+      <div class="input-wrapper">
+        <input type="text" class="input w100p" name="coupon_code" value="<?php echo $block->escapeHtml($block->getCouponCode()) ?>" placeholder="Code Eingabe..." />
+      </div>
+      <?php if (!strlen($block->getCouponCode())): ?>
+        <button class="btn-green" type="submit">
+          <span>Gutschein aktivieren</span>
+        </button>
+      <?php else: ?>
+        <button class="btn-green" type="button">
+          <span>Cancel Gutschein aktivieren</span>
+        </button>
+      <?php endif; ?>
+    </form>
+  </div>
+  <div class="block total">
+    <div class="row clear">
+      <div class="left fw-500">SUMME</div>
+      <div class="right fw-700">17,70 €</div>
+    </div>
+    <div class="row clear text-italic">
+      <div class="left">MWST. (7%)</div>
+      <div class="right">1,24 €</div>
+    </div>
+    <div class="row clear">
+      <div class="left fw-500">VERSAND</div>
+      <div class="right fw-600">3,99 €</div>
+    </div>
+    <div class="row clear fw-800">
+      <div class="left">GESAMT</div>
+      <div class="right">22,93 €</div>
+    </div>
+    <div class="btn-green w100p">
+      <a href="#">Zur kasse gehen</a>
+    </div>
+  </div>
+</div>

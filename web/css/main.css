@@ -779,6 +779,12 @@ body {
   .wrapper .content {
     width: 900px; }
 
+.messages {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  width: 100%; }
+
 .notification {
   text-align: center;
   color: #719602;
@@ -790,6 +796,14 @@ body {
   box-shadow: #999999 0px 2px 5px 0px;
   position: relative;
   background-color: #eeeede; }
+  .notification.error {
+    color: #CC0000; }
+    .notification.error .text {
+      color: #CC0000; }
+  .notification.success {
+    color: #719602; }
+    .notification.success .text {
+      color: #719602; }
   .notification i {
     font-weight: bold;
     text-decoration: italic; }

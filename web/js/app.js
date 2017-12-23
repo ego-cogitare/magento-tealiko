@@ -1,3 +1,33 @@
+// Check for Magento messages
+var magentoMessage = {
+
+  $el: $('.messages'),
+  $template: $('.messages').find('script'),
+
+  create: function(data) {
+    var html = this.$template.html().replace('<%title%>', data.title).replace('<%message%>', data.text)
+      , $html = $(html);
+
+    $(html).appendTo(this.$el).addClass(data.type);
+  },
+
+  render: function() {
+    var self = this;
+
+    // Display messages
+    JSON.parse(Cookies.get('mage-messages') || '[]').forEach(function(message) {
+      self.create({
+        title: message.type + ': ',
+        text: message.text.replace(/\+/g, ' '),
+        type: message.type
+      });
+    });
+
+    // Remove shown messages from cookies
+    Cookies.remove('mage-messages');
+  }
+};
+
 $(document).ready(function() {
   $('.main-menu .menu-item').hover(
     function() {
@@ -172,7 +202,6 @@ $(document).ready(function() {
 
   $('form#add-to-cart').on('submit', function(e) {
     e.preventDefault();
-
     cart.productAdd.call(
       this,
       $(this).serialize(),
@@ -184,5 +213,7 @@ $(document).ready(function() {
       }
     );
   });
+
+  magentoMessage.render();
 
 });
