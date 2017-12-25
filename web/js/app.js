@@ -205,14 +205,30 @@ $(document).ready(function() {
     cart.productAdd.call(
       this,
       $(this).serialize(),
+
+      // On success response callback
       function(response) {
-        cart.refresh();
+
+        // Update cart widget
+        cart.refresh(function(response) {
+
+          // Display magento last messages
+          response.messages.messages.forEach(function(message) {
+            magentoMessage.create({
+              type: message.type,
+              title: message.type + ': ',
+              text: message.text
+            });
+          });
+        });
       },
+
       function(error) {
         console.log(error);
       }
     );
   });
+  
 
   magentoMessage.render();
 

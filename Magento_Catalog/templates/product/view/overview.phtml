@@ -5,6 +5,9 @@
   $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
   $product = $objectManager->create('Magento\Catalog\Model\Product')->load($_product->getId());
   $rating = $objectManager->create('Magento\Review\Model\Rating');
+
+  // Get product options (like color/weight/size)
+  $productOptions = $objectManager->get('Magento\ConfigurableProduct\Model\Product\Type\Configurable')->getConfigurableAttributesAsArray($product);
 ?>
 
 <div class="clear product-info">
@@ -56,8 +59,6 @@
       <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
       <input type="hidden" name="selected_configurable_option" value="" />
       <input type="hidden" name="related_product" value="" />
-      <input type="hidden" name="super_attribute[90]" value="50" />
-      <input type="hidden" name="super_attribute[137]" value="169" />
       <?php echo $block->getBlockHtml('formkey'); ?>
       <?php echo $block->getChildHtml('form_top'); ?>
       <div class="count fw-500">
@@ -65,54 +66,32 @@
         <input type="number" name="qty" maxlength="3" value="1" min="1" max="999" title="Qty" class="input-number" />
       </div>
       <div class="options">
-        <div class="option clear">
-          <div class="switch left">
-            <input type="radio" id="option-1" name="" checked />
-            <label for="option-1"></label>
-          </div>
-          <div class="weight left">
-            <p class="fw-700">100g - (100g / 3,90 €) T-Preis</p>
-            <p>100g - (100g / 2,53 €) <u>C-Preis</u> <img src="<?php echo $this->getViewFileUrl('img/icons/icon-percent-black.png') ?>" valign="middle" alt="Icon percent" /></p>
-          </div>
-          <div class="price right">
-            <p class="fw-700">3,90 €</p>
-            <p>2,53 €</p>
-          </div>
-        </div>
-        <div class="option clear">
-          <div class="switch left">
-            <input type="radio" id="option-2" name="" />
-            <label for="option-2"></label>
-          </div>
-          <div class="weight left">
-            <p class="fw-700">100g - (100g / 3,90 €) T-Preis</p>
-            <p>100g - (100g / 2,53 €) <u>C-Preis</u> <img src="<?php echo $this->getViewFileUrl('img/icons/icon-percent-black.png') ?>" valign="middle" alt="Icon percent" /></p>
-          </div>
-          <div class="price right">
-            <p class="fw-700">3,90 €</p>
-            <p>2,53 €</p>
-          </div>
-        </div>
-        <div class="option clear">
-          <div class="switch left">
-            <input type="radio" id="option-3" name="" />
-            <label for="option-3"></label>
-          </div>
-          <div class="weight left">
-            <p class="fw-700">100g - (100g / 3,90 €) T-Preis</p>
-            <p>100g - (100g / 2,53 €) <u>C-Preis</u> <img src="<?php echo $this->getViewFileUrl('img/icons/icon-percent-black.png') ?>" valign="middle" alt="Icon percent" /></p>
-          </div>
-          <div class="price right">
-            <p class="fw-700">3,90 €</p>
-            <p>2,53 €</p>
-          </div>
-        </div>
+        <?php if (!empty($productOptions)) : ?>
+          <?php foreach ($productOptions as $optionId => $option) : ?>
+            <?php foreach ($option['values'] as $optionValue) : ?>
+              <div class="option clear">
+                <div class="switch left">
+                  <input type="radio" name="super_attribute[<?php echo $optionId; ?>]" value="<?php echo $optionValue['value_index']; ?>" id="option-<?php echo $optionValue['value_index']; ?>" />
+                  <label for="option-<?php echo $optionValue['value_index']; ?>"></label>
+                </div>
+                <div class="weight left">
+                  <p class="fw-700"><?php echo $optionValue['label']; ?><!-- - (<?php echo $optionValue['label']; ?> / 3,90 €)--> T-Preis</p>
+                  <p><?php echo $optionValue['label']; ?><!-- - (<?php echo $optionValue['label']; ?> / 2,53 €) --> <u>C-Preis</u> <img src="<?php echo $this->getViewFileUrl('img/icons/icon-percent-black.png') ?>" valign="middle" alt="Icon percent" /></p>
+                </div>
+                <div class="price right">
+                  <p class="fw-700"><?php printf('%0.2f', $_product->getFinalPrice()) ?>€</p>
+                  <p><?php printf('%0.2f', $_product->getFinalPrice()) ?>€</p>
+                </div>
+              </div>
+            <?php endforeach; ?>
+          <?php endforeach; ?>
+        <?php endif; ?>
       </div>
       <div class="divider"></div>
       <div class="clear total-info">
         <div class="left">
           <p class="gray">Artikelnr.: <?php echo $_product->getSku() ?></p>
-          <p class="gray price"><span class="fw-800"><?php printf('%0.2f', $_product->getFinalPrice()) ?> €</span>  4.50 €</p>
+          <p class="gray price"><span class="fw-800"><?php printf('%0.2f', $_product->getFinalPrice()) ?>€</span> 4.50€</p>
         </div>
         <div class="right text-right">
           <p class="gray"><img src="<?php echo $this->getViewFileUrl('img/icons/icon-clock.png') ?>" valign="middle" alt="Icon clock" /> Lieferzeit: 3-5 Tage</p>
@@ -123,48 +102,3 @@
     </form>
   </div>
 </div>
-
-<!-- <div class="tabs-wrapper">
-  <ul class="tabs">
-    <li class="tab active">
-      <a href="#tab-1">Beschreibung</a>
-    </li>
-    <li class="tab">
-      <a href="#tab-2">Zubereitung</a>
-    </li>
-    <li class="tab">
-      <a href="#tab-3">Bewertungen (5)</a>
-    </li>
-  </ul>
-  <div id="tab-1" class="tabs-content text">
-    <?php echo $_product->getDescription() ?>
-  </div>
-  <div id="tab-2" class="tabs-content">
-    <p class="text">
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-    </p>
-  </div>
-  <div id="tab-3" class="tabs-content">
-    <p class="text">
-      At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-    </p>
-    <p class="text">
-      <br/>
-      At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-    </p>
-    <p class="text">
-      <br/>
-      At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-    </p>
-  </div>
-  <div class="socials clear">
-    <span class="left">Teilen:</span>
-    <div class="icons left">
-      <a href="#" class="icon fa fa-facebook"></a>
-      <a href="#" class="icon fa fa-pinterest"></a>
-      <a href="#" class="icon fa fa-twitter"></a>
-      <a href="#" class="icon fa fa-google-plus"></a>
-      <a href="#" class="icon fa fa-instagram"></a>
-    </div>
-  </div>
-</div> -->

@@ -171,6 +171,15 @@
                 background-color: $brand-color;
               }
             }
+            .weight {
+              width: 230px;
+              & > * {
+                display: block;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+              }
+            }
             .price {
               width: 58px;
               height: 48px;
@@ -225,7 +234,7 @@
         background-color: #fbfbea;
         padding: 10px 20px;
         display: none;
-        ul {
+        ul, ol {
           margin-left: 25px;
         }
         th {

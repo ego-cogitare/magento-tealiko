@@ -796,9 +796,9 @@ body {
   box-shadow: #999999 0px 2px 5px 0px;
   position: relative;
   background-color: #eeeede; }
-  .notification.error {
+  .notification.error, .notification.notice {
     color: #CC0000; }
-    .notification.error .text {
+    .notification.error .text, .notification.notice .text {
       color: #CC0000; }
   .notification.success {
     color: #719602; }
@@ -2185,6 +2185,13 @@ footer {
             box-shadow: #d1d1c3 1px 1px 0px 0px; }
           .wrapper.product .content .product-info .product-options .options .option .switch input[type="radio"]:checked + label {
             background-color: #bad324; }
+        .wrapper.product .content .product-info .product-options .options .option .weight {
+          width: 230px; }
+          .wrapper.product .content .product-info .product-options .options .option .weight > * {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap; }
         .wrapper.product .content .product-info .product-options .options .option .price {
           width: 58px;
           height: 48px;
@@ -2224,7 +2231,7 @@ footer {
         background-color: #fbfbea;
         padding: 10px 20px;
         display: none; }
-        .wrapper.product .content .tabs-wrapper .tabs-content ul {
+        .wrapper.product .content .tabs-wrapper .tabs-content ul, .wrapper.product .content .tabs-wrapper .tabs-content ol {
           margin-left: 25px; }
         .wrapper.product .content .tabs-wrapper .tabs-content th {
           text-align: right;

@@ -285,7 +285,8 @@ body {
   box-shadow: rgb(153, 153, 153) 0px 2px 5px 0px;
   position: relative;
   background-color: $gray-color;
-  &.error {
+  &.error,
+  &.notice {
     color: #CC0000;
     .text {
       color: #CC0000;
