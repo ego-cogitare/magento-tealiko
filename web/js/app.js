@@ -228,8 +228,11 @@ $(document).ready(function() {
       }
     );
   });
-  
 
+  // Refresh cart
+  cart.refresh();
+
+  // Display notifications
   magentoMessage.render();
 
 });

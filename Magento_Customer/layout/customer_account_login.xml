@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<page layout="custom_home" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+  <update handle="default_head_blocks" />
+  <body>
+    <referenceBlock name="report.bugs" remove="true" />
+    <referenceBlock name="section-1" remove="true" />
+    <referenceBlock name="section-2" remove="true" />
+    <referenceBlock name="section-3" remove="true" />
+    <referenceBlock name="customer.new" remove="true" />
+
+    <referenceContainer name="holder-wrapper">
+      <block class="Magento\Theme\Block\Html\Header" name="header" as="header" template="Magento_Theme::html/header.phtml" after="topmessages" />
+      <block class="Magento\Theme\Block\Html\Topmenu" name="mainmenu" template="Magento_Theme::html/topmenu.phtml" ttl="3600" after="header" />
+    </referenceContainer>
+
+    <referenceContainer name="main-wrapper">
+      <block class="Magento\Framework\View\Element\Template" name="content" />
+      <container name="customer.login.container" label="Customer Login Container" htmlTag="div" htmlClass="wrapper">
+        <block class="Magento\Customer\Block\Form\Login" name="customer_form_login" template="Magento_Customer::form/login.phtml">
+          <container name="form.additional.info" as="form_additional_info"/>
+        </block>
+      </container>
+      <container htmlTag="section">
+        <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::html/advertising.phtml" />
+      </container>
+    </referenceContainer>
+
+    <referenceContainer name="footer-wrapper">
+      <block class="Magento\Theme\Block\Html\Footer" name="footer" as="footer" template="Magento_Theme::html/footer.phtml" before="-" />
+    </referenceContainer>
+
+    <referenceContainer name="copyright-wrapper">
+      <block class="Magento\Framework\View\Element\Template" name="copyright" template="Magento_Theme::html/copyright.phtml" />
+    </referenceContainer>
+  </body>
+</page>

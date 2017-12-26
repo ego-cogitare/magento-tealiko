@@ -1,0 +1,53 @@
+<div class="authorization">
+  <div class="signin-form block">
+    <div class="heading-1">
+      Anmeldung
+    </div>
+    <div class="text clear">
+      <div class="left">
+        Melden Sie sich in lhrem Kundenkonto an.
+      </div>
+      <div class="right">
+        <span>*</span> Pflichtfelder
+      </div>
+    </div>
+    <form action="<?php echo $block->getPostActionUrl() ?>" method="post">
+      <?php echo $block->getBlockHtml('formkey'); ?>
+      <div class="row">
+        <input name="login[username]" value="<?php echo $block->escapeHtml($block->getUsername()) ?>" <?php if ($block->isAutocompleteDisabled()) :?> autocomplete="off"<?php endif; ?> type="email" class="input" placeholder="Username oder E-Mail Adresse *" title="<?php echo __('Email') ?>" required />
+      </div>
+      <div class="row">
+        <input name="login[password]" type="password" <?php if ($block->isAutocompleteDisabled()) :?> autocomplete="off"<?php endif; ?> class="input" title="<?php echo __('Password') ?>" placeholder="Ihr Passwort *" required />
+      </div>
+      <div class="row remember-me clear">
+        <div class="left">
+          <input type="checkbox" id="remember-me" name="password">
+          <label for="remember-me">angemeldet bleiben</label>
+        </div>
+        <div class="right">
+          <a href="<?php echo $block->getForgotPasswordUrl() ?>">Passwort vergessen?</a>
+        </div>
+      </div>
+      <div class="row">
+        <button type="submit" name="send" class="btn-green">anmelden (login)</button>
+      </div>
+    </form>
+  </div>
+  <div class="signup-form block">
+    <div class="heading-1 text-center">
+      Registrierung
+    </div>
+    <div class="text text-center">
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+      ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+      dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies
+      nec, pellentesque eu.
+    </div>
+    <div class="btn-brown">
+      <a href="/customer/account/create/">jetzt registrieten!</a>
+    </div>
+    <div class="picture text-center">
+      <img src="<?php echo $this->getViewFileUrl('img/anmeldung/tea-time.png'); ?>">
+    </div>
+  </div>
+</div>
